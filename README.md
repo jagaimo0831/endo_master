@@ -46,3 +46,19 @@ $ latexmk -pvc main.tex
 - 各自の分量に合わせて\vspaceなどを使って適宜余白を調整する．
 
 - 図表のキャプションは\captionではなく\smallcapを使った方が，バランスが良い．
+
+##エラー
+
+最初のmakeでエラー
+
+- エラー内容
+	- endo@endo-ThinkPad-T550:~/prog/prog_AY2020/endo_master$ make pdf
+	- (cd ./fig; ebb *.jpg *.JPG *.gif)
+	- /bin/sh: 1: ebb: not found
+	- Makefile:35: recipe for target 'main.dvi' failed
+	- make: *** [main.dvi] Error 127
+
+- 対処法
+	- 
+
+

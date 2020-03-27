@@ -1,0 +1,22 @@
+{
+    "latex-workshop.latex.tools": [
+        {
+            "name": "mizuuchiLab Make",
+            "command": "make",
+            "args": [
+                "pdf"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+          "name": "make",
+          "tools": [
+            "mizuuchiLab Make"
+          ]
+        }
+    ],
+    "editor.minimap.enabled": false,
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 60
+}
