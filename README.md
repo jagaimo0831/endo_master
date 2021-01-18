@@ -59,6 +59,14 @@ $ latexmk -pvc main.tex
 	- make: *** [main.dvi] Error 127
 
 - 対処法
-	- 
+	- 環境構築
+		- Texliveのインストール
+		  $ sudo apt-get install texlive-full xzdec
+		
+		- apt update
+		- gcc のインストール
+		- エラーコードに沿ってetc
+
+	- make pdf
 
 
