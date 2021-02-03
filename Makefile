@@ -1,5 +1,5 @@
-TARGET=main
-#tuatmech-master-chukan-template main soturon-maezuri-template 
+TARGET=tuatmech-master-chukan-template
+#main tuatmech-master-chukan-template main soturon-maezuri-template 
 #TARGETに指定されたものがmakeされる．不要なものはコメントアウトしよう．
 
 # set below the directory in which your figs are placed
