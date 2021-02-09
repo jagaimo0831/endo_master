@@ -13,130 +13,150 @@
 \author{遠藤　健}{水内研究室}{Ken ENDO}
 
 \begin{abstract}
-ココにはアブストを書こう（とりあえず日本語）．\\
-仮想空間で人に浮遊感を与える研究において，視覚の変化を与えることによって飛ぶ感覚を与える研究は数多くある．しかし鳥のように翼を動かして飛ぶ感覚を与える研究は少ない．さらに言えば，トビトカゲのように四肢から独立した翼を持つ生き物になりきって飛ぶ感覚を与える研究は見当たらない．\\
-    
-本研究では，翼を動かして飛ぶ感覚を与える研究に注目し，人の胴体部分で翼を操作しているように感じさせる方法と，仮想空間で翼にかかる力を人に伝達する仕組みを考える．それにより，従来は人が鳥のように腕を動かすことによって浮遊感を感じていたが，腕を動かさずに飛んでいる感覚を感じることが可能となり，仮想空間での没入感が増すと考える．
-
+  In the research that gives a person a floating feeling in virtual space, there are many studies that give a feeling of flying by giving a visual change. However, there are few studies that give the feeling of flying by moving wings like a bird. Furthermore, there are no studies that give the sensation of flying as a creature with wings independent of its limbs, such as a lizard.
+  In this research, we focus on research that gives the sensation of flying by moving the wings, and consider a method that makes the wing feel like it is being operated by the human body, and a mechanism that transmits the force applied to the wing to a person in virtual space.  As a result, in the past, people felt floating by moving their arms like birds, but it is possible to feel the feeling of flying without moving their arms, and it is thought that the immersive feeling in virtual space will increase. 
+  % アブスト若干短くした方が良いか？ 
 
 \end{abstract}
 
-\keyword{浮遊感, 羽ばたいて飛ぶ感覚, 仮想翼, EMS, 四肢以外}
+\keyword{anacatestisia(floating feeling), sensation of flying with flapping, virtual wings, EMS, independent of the limbs}
+% キーワードもう少し考える
 ]
+
 \begin{small}
 \section{緒　　言}
-仮想空間で人に浮遊感を与える研究において，視覚の変化を与えることによって飛ぶ感覚を与える研究は数多くある．しかし鳥のように翼を動かして飛ぶ感覚を与える研究は少ない．さらに言えば，トビトカゲのように四肢から独立した翼を持つ生き物になりきって飛ぶ感覚を与える研究は見当たらない．
+  VR空間で人に浮遊感を与える研究において，視覚の変化を与えることによって飛ぶ感覚を与える研究は数多くある．しかし鳥のように翼を動かして飛ぶ感覚を与える研究は少ない．さらに言えば，トビトカゲのように四肢から独立した翼を持つ生き物になりきって飛ぶ感覚を与える研究は見当たらない．
 
-  本研究では，翼を動かして飛ぶ感覚を与える研究に注目し，人の胴体部分で翼を操作しているように感じさせる方法と，仮想空間で翼にかかる力を人に伝達する仕組みを考える．それにより，従来は人が鳥のように腕を動かすことによって浮遊感を感じていたが，腕を動かさずに飛んでいる感覚を感じることが可能となり，仮想空間での没入感が増すと考える．
+  本研究では，翼を動かして飛ぶ感覚を与える研究に注目し，人の胴体部分で翼を操作しているように感じさせる方法と，VR空間で翼にかかる力を人に伝達する仕組みを考える．それにより，従来は人が鳥のように腕を動かすことによって浮遊感を感じていたが，腕を動かさずに飛んでいる感覚を感じることが可能となり，VR空間での没入感が増すと考える．
 
-  % 先行研究について触れる部分を追記する
 
-\section{仮想翼の提示}
-人間には身体像というhogehogeがあり，その仕組みはfugafugaである．
+\section{浮遊感と翼の提示について}
+  \subsection{浮遊感の提示}
+    本研究では浮遊感，飛ぶ感覚，羽ばたいて飛ぶ感覚を次のように分類する．
+    「浮遊感」とは，空中に浮いて漂っているような感覚を指す．「飛ぶ感覚」は浮遊感に空中を（速く）進むような感覚追加したものとする．本稿で注目する「羽ばたいて飛ぶ感覚」は，飛ぶ感覚に翼を羽ばたかせるという感覚を追加したものである．
 
-またクロスモーダルというものがあり，仕組みはhogegeである．
+    浮遊感に関する研究で，視覚刺激によって発生する落下感覚を分析した研究がある\cite{奥川夏輝2017VR空間における視覚刺激によって発生する落下感覚の分析}．この研究は視覚誘導性自己運動感覚（ベクション）に着目して落下感覚を分析したものである．ベクションとは，視野の大部分に一様な運動刺激を提示すると，刺激の運動方向と反対の方向に体が動いているように感じる錯覚である\cite{妹尾武治2014ベクションとその周辺の近年の動向}．例として，停止した電車から反対側にある動き出している電車を見ると，まるでこちらの電車が動いているように感じるといったことが挙げられる．
 
-よってこれらをより，人間にhogefugaすることで仮想的な翼があたかも背中から実際に生えてを操作しているという感覚を与えることができるとhogege考える．
+    また飛行中の鳥の様子を体験する研究の一例としてBirdly\cite{rheiner2014birdly}がある．この研究は鳥の1人称視点での景色の映像と，鳥の体に見立てた装置にうつ伏せで乗って手と腕で操作し翼を動かすことで，飛行中の鳥のような体験をするものである．
 
-%ヒト→デバイス部分よりも，デバイス→ヒト部分の方が重要hogeとか書けると良いな
+  \subsection{仮想翼の提示}
+    ヒトは自分自身の身体がどのような形をしているかのイメージ（身体像）を持っている．それによって自己とそれ以外を区別することができる．しかし，自己以外の部分に身体像が拡張する場合がある．身体像の拡張に関する研究についてラバーハンド錯覚についての研究がある\cite{botvinick1998rubber}．目の前にラバーハンドを置きその横に自分の手を並べて仕切り板等で見えなくする．その後，ラバーハンドと自分の手を筆で同時に触ることで，ラバーハンドが自分の手であるかのように感じるという錯覚である．
 
-\section{実験方法}
-実験方法の概要を\figref{experimental_method}に示す．
+    
+  
+  % テレイグ，人間拡張関係の引用＋EMSを用いた力覚
 
-\begin{figure}[b]
-  \begin{center}
-  \includegraphics[width=0.75\hsize]{\FIGDIR/experimental_method}%
-  \caption{Experimental method}
-  \figlabel{experimental_method}
-  \end{center}
+  本研究では，
+
+  % \begin{figure}[b]
+  %   \begin{center}
+  %     \includegraphics[width=0.60\hsize]{\FIGDIR/Birdly.jpg}%
+  %     \caption{Birdly}
+  %     \figlabel{Birdly}
+  %   \end{center}
+  % \end{figure}
+
+
+  % 関連研究について触れる部分を追記する
+  % 関連研究を踏まえて四肢以外で操作するメリットについて述べる
+
+ 
+  
+
+\section{羽ばたいて飛ぶ感覚の提示方法}
+  実験環境の概要を\figref{experimental_method}に示す．実験の環境は2つに分類でき，ヒトからデバイスへ情報を送る部分・デバイスからヒトへ情報を送る部分で構成されている．
+  
+  \begin{figure}[b]
+    \begin{center}
+      \includegraphics[width=0.90\hsize]{\FIGDIR/experimental_method}%
+      \caption{Experimental method}
+      \figlabel{experimental_method}
+    \end{center}
   \end{figure}
+  % 図のモデルを人形にした方が良い，余計な情報を削除
+  % 英語にする
+  
+  ヒトからデバイスの部分，つまり仮想翼の操作は，人体の筋電値を読み取みとり，その値によって仮想翼が動作するように設計を行った．\figref{Manipulation_of_virtual_wings_using_Myo}に手首の動きに
+  合わせて仮想翼の骨組みを動作させた実験の様子を示す．筋電値計測デバイスはMyo（Thalmic labs社），仮想翼の骨組みはUnityを用いて作成した．翼の操作方法は手首を内側に曲げると翼が内側へ曲がり，手首を外側に開くと翼も外側へ開くようにした．実験より，筋電値による翼の操作の有用性を確認した．また，3人称視点ではやはり仮想翼が自分の背中から生えているという状況を想定しづらいことも確認した．
 
-\section{実験結果・考察}
+  \begin{figure}[b]
+    \begin{center}
+      \includegraphics[width=0.90\hsize]{\FIGDIR/Manipulation_of_virtual_wings_using_myo.pdf}%
+      \caption{Manipulation of virtual wings using Myo}
+      \figlabel{Manipulation_of_virtual_wings_using_Myo}
+    \end{center}
+  \end{figure}
+  % この図めっちゃ分かりづらいので差し替え（筋電値のグラフと翼の動きが対応してる図とか）
+  
+
+  デバイスからヒトへの部分，ヒトへ仮想翼を使って羽ばたいて飛んでいる感覚を提示する方法は，力覚提示による仮想翼が羽ばたいている様子・視覚による翼で飛んでいる様子を感じさせる部分の2つに分類する．
+  
+  力覚提示による仮想翼が羽ばたいている様子を感じさせる部分は，翼のそれぞれにかかる力をヒトへ提示する際，\figref{How2present_force_applied2wings}のように力覚の提示位置をヒトの背中に対応させることで翼がしなっていく様子を再現する．本研究では力覚の提示方法は2種類検討しており，1つ目はモータによる振動または押す力，2つ目は低周波治療器といったEMS機器により筋肉を力ませることで疑似的に力覚を提示する手法である．
+
+  視覚による翼で飛んでいる様子を感じさせる部分はHMDを用いる．具体的には，ベクションを用いてヒトがVR空間を飛んでいる様子・自分の背中から生えている翼が羽ばたいている様子をHMDに映すことで翼を用いて飛んでいる様子を再現する．
+
+  \begin{figure}[t]
+    \begin{center}
+      \includegraphics[width=0.90\hsize]{\FIGDIR/How2present_force_applied2wings.pdf}%
+      \caption{How to present force applied virtual wings}
+      \figlabel{How2present_force_applied2wings}
+    \end{center}
+  \end{figure}
+  % 人体図の注釈はいらない（ジャマ）
+
+
+
+\section{被験者実験}
+  \subsection{実験の目的及び意義}
+    VR技術の発展に伴い、より現実に近い感覚を提示できるシステムの開発に必要な知見を実験を通して得ることを目的とする。
+    翼で飛ぶといった日常では起こりえない感覚を人に提示するためには、どのようなシステムの働きが人の感覚にとってリアルに感じられるかを人の主観により評価する必要がある。
+    当該研究の成果としてVR技術の発展が見込め、例えば効果的な職業訓練として利用できる。
+  
+  \subsection{実験方法}
+    学内メーリングリスト、掲示、アルバイト募集用WEBサイトなどを利用して被験者の募集を行う。被験者の選定方針に関しては特に定めない．ただし、未成年の場合には保護者の承諾を取ることとする。
+    被験者はHMD（ヘッドマウントディスプレイ）（図1）、筋電計測装置（図2）、フィードバック装置（電気・力）（図3）を装着し、3Dモデルを操縦する。この際、被験者の筋電のデータを記録する。筋電計測装置とフィードバック装置に関しては、腕や首，背中に直接貼り付ける。その後、操縦中の没入感に関して被験者は質問に答える。
+    HMD、筋電計測装置、フィードバック装置は市販品を用いる。
+    これらの実験は実験内容に応じて説明書と同意書を用意し、被験者の同意を得て実験を行う。
+
+
+    % 以下の図をまとめた写真を用意する（HMD，センサ，低周波治療器を装着した自分）
+    % \begin{figure}[b]
+    %   \begin{center}
+    %     \includegraphics[width=0.80\hsize]{\FIGDIR/VIVE_PRO_EYE.jpg}%
+    %     \caption{HMD:VIVE PRO EYE}
+    %     \figlabel{VIVE_PRO_EYE}
+    %   \end{center}
+    % \end{figure}
+
+    % \begin{figure}[b]
+    %   \begin{center}
+    %     \includegraphics[width=0.80\hsize]{\FIGDIR/MyoWare.jpg}%
+    %     \caption{筋電計測装置:MyoWare}
+    %     \figlabel{MyoWare}
+    %   \end{center}
+    % \end{figure}
+
+    % \begin{figure}[b]
+    %   \begin{center}
+    %     \includegraphics[width=0.70\hsize]{\FIGDIR/OMRON_HV-F125.jpg}%
+    %     \caption{力覚提示装置:OMRON低周波治療器}
+    %     \figlabel{OMRON_HV-F125}
+    %   \end{center}
+    % \end{figure}
+
+  \subsection{被験者に生じるリスクとその対処法}
+    実験中に発生する浮遊感やVR酔い。
+    不特定多数の被験者が実験場所に出入りするため，新型コロナウイルス感染症（Covid-19）の感染リスク．
+
+    被験者には事前に気分が悪くなったり，疲労を感じた場合いつでも休憩を申し出て良い旨を伝え、申し出があった場合ただちに対応する。
+    参加者が手に触れる可能性のある箇所（ロボット含む実験用機材、ドアノブ、椅子等）を、毎実験毎にアルコールで消毒する。部屋の換気は、実験前・実験後に行い、実験中は20～30分毎に換気する。実験実施者はマスクを着用し、説明等の対応をする。
+    実験参加者は、事前に自宅などで体温測定をした上で来るように伝える。また、実験開始前に、手指の消毒と、体温測定を行う。実験前日までに37.5℃以上の発熱、または息苦しさ、強いだるさなどの強い症状のいずれかがある場合は、実験を中止とする。
+    以上の対応を取ることを、被験者募集要項に記載し、事前に周知する。
+    実験前後の換気の時間を十分に確保するため、１人の実験が終了した後、次の実験を開始するまでの時間を最低15分以上空くようにスケジュール管理を行う。
+
 \section{結言}
 
-\section{ほげ症候群の主な症例}
-ほげ症候群とは主に以下のような症状全般を指す\cite{Hondo:hohoge2006}．
-\begin{itemize}
-\item 気がつくと指が勝手に``hoge''と打っている．
-\item ``hogan''と打とうとすると指が勝手に``hogen''と動く．
-\item 気がつくと「ほげー」っとしている．
-\item 気がつくとほげだけで会話が成立している．
-\end{itemize}
-\section{ほげの公式の導出}
-\subsection{ほげの原理}
-ほげの原理は次式で与えられる\cite{Kawamura:hogege2010}．
-\begin{eqnarray}
-\int_{-\infty}^\infty \mathrm{hoge}(x,y) dx = \left( \pdiff{\mathrm{hoge}}{y} \label{hoge} \right)_{x = 0}
-\end{eqnarray}
-ただし$\mathrm{hoge}(x,y)$はほげ母関数である．
-\subsection{ほげの公式}
-式(\ref{hoge})から以下の式が自明である．
-\begin{eqnarray}
-1 + 1 = 2
-\end{eqnarray}
-本研究では上式をほげの公式と呼ぶ．
-\section{ほげワクチンの実験}
-前章での議論より以下の反応でほげ症候群が予防できると考えられる．
-\begin{eqnarray}
-\mathrm{Hoge^{2+} \ + 2e^{-} \ \rightarrow \ Hoge}
-\end{eqnarray}
-ワクチン生成装置のスペックをTable \ref{spec}に示す．
-\begin{table}[b]
-\caption{Motor parameters}
-\label{spec}
-\begin{center}
-\begin{tabular}{c c}
-\toprule
-$R$ & $11.2\,\mathrm{\Omega}$ \\
-$L$ & $4.52 \times 10^{-4}\,\mathrm{H}$ \\
-$J_\mathrm{m}$ & $1.29 \times 10^{-7}\,\mathrm{kg \cdot m^2}$ \\
-$K_\mathrm{m\phi}\,(=K_\mathrm{b})$ & $1.62 \times 10^{-2}\,\mathrm{N \cdot m / A}$ \\
-$F_\mathrm{m}$ & $2.28 \times 10^{-7}\,\mathrm{N \cdot m \cdot s / rad}$ \\
-$E$ & $24\,\mathrm{V}$ \\
-$\gamma$ & 84 \\
-\bottomrule
-\end{tabular}
-\end{center}
-\end{table}
-実験結果を\figref{piyo}に示す.また、被験者がほげた結果を\figref{hogeta}に示す。
-
-\begin{figure}[b]
-\begin{center}
-\framebox{ほげは世界を救う}
-\caption{Result of experiment}
-\figlabel{piyo}
-\end{center}
-\end{figure}
-
-\begin{figure}[b]
-\begin{center}
-\includegraphics[width=0.75\hsize]{\FIGDIR/fig1.eps}%
-\caption{Result of hogeta}
-\figlabel{hogeta}
-\end{center}
-\end{figure}
-\section{結　　言}
-ほげワクチンの開発は不可能である．
-そのため、ほげ症候群にならないように予防をする必要があると考えられる。
-
-
-%% \begin{thebibliography}{99}
-%% \small
-%%  \setlength{\kanjiskip}{0.0zw plus.01zw} %
-%%  \setlength{\baselineskip}{9pt}        %
-%%  \setlength{\itemsep}{0.2pt}             %
-%%  \setlength{\lineskip}{0pt}              %
-%%  \setlength{\normallineskip}{0.2pt}      %
-
-
-%% \bibitem{hogege} 川村マサキ，
-%% ほげの可能性と適用限界に関する実験的研究，日本ほげ学会ほげ工学部門講演会，(2010)．
-
-%% \bibitem{hoooge} 日本ほげ医学会編，
-%% 本当は怖いほげの医学，(2011)，捕鯨出版.
-
-%% \bibitem{hohoge} 本堂貴敏，
-%% ほげの力学，(2006)，pp.11-43，ほげ出版．
+ % 少なくとも1つは参考文献をciteしないとエラーが起きる
 
 {
 \small
