@@ -13,8 +13,8 @@
 \author{遠藤　健}{水内研究室}{Ken ENDO}
 
 \begin{abstract}
-  In the research that gives a person a floating feeling in virtual space, there are many studies that give a feeling of flying by giving a visual change. However, there are few studies that give the feeling of flying by moving wings like a bird. Furthermore, there are no studies that give the sensation of flying as a creature with wings independent of its limbs, such as a lizard.
-  In this research, we focus on research that gives the sensation of flying by moving the wings, and consider a method that makes the wing feel like it is being operated by the human body, and a mechanism that transmits the force applied to the wing to a person in virtual space.  As a result, in the past, people felt floating by moving their arms like birds, but it is possible to feel the feeling of flying without moving their arms, and it is thought that the immersive feeling in virtual space will increase. 
+  In the research that gives a person a floating feeling in virtual space, there are many studies that give a feeling of flying by giving a visual change. However, there are few studies that give the feeling of flying by moving wings like a bird. Furthermore, there are no studies that give the sensation of flying as a creature with wings independent of its limbs, such as a Doraco.
+  In this research, we focus on research that gives the sensation of flying with flapping the wings, and consider a method that makes the wings feel like it is being operated by the human body, and a mechanism that transmits the force applied to the wing to a person in virtual space.  As a result, in the past, people felt floating by moving their arms like birds, but it is possible to feel the feeling of flying without moving their arms, and it is thought that the immersive feeling in virtual space will increase. 
   % アブスト若干短くした方が良いか？ 
 
 \end{abstract}
@@ -30,96 +30,124 @@
   本研究では，翼を動かして飛ぶ感覚を与える研究に注目し，人の胴体部分で翼を操作しているように感じさせる方法と，VR空間で翼にかかる力を人に伝達する仕組みを考える．それにより，従来は人が鳥のように腕を動かすことによって浮遊感を感じていたが，腕を動かさずに飛んでいる感覚を感じることが可能となり，VR空間での没入感が増すと考える．
 
 
-\section{浮遊感と翼の提示について}
+\section{浮遊感と仮想翼の提示}
   \subsection{浮遊感の提示}
     本研究では浮遊感，飛ぶ感覚，羽ばたいて飛ぶ感覚を次のように分類する．
     「浮遊感」とは，空中に浮いて漂っているような感覚を指す．「飛ぶ感覚」は浮遊感に空中を（速く）進むような感覚追加したものとする．本稿で注目する「羽ばたいて飛ぶ感覚」は，飛ぶ感覚に翼を羽ばたかせるという感覚を追加したものである．
 
-    浮遊感に関する研究で，視覚刺激によって発生する落下感覚を分析した研究がある\cite{奥川夏輝2017VR空間における視覚刺激によって発生する落下感覚の分析}．この研究は視覚誘導性自己運動感覚（ベクション）に着目して落下感覚を分析したものである．ベクションとは，視野の大部分に一様な運動刺激を提示すると，刺激の運動方向と反対の方向に体が動いているように感じる錯覚である\cite{妹尾武治2014ベクションとその周辺の近年の動向}．例として，停止した電車から反対側にある動き出している電車を見ると，まるでこちらの電車が動いているように感じるといったことが挙げられる．
+    浮遊感に関する研究で，視覚刺激によって発生する落下感覚を分析した研究がある\cite{奥川夏輝2017VR空間における視覚刺激によって発生する落下感覚の分析}．この研究は視覚誘導性自己運動感覚（ベクション）に着目して落下感覚を分析したものである．ベクションとは，視野の大部分に一様な運動刺激を提示すると，刺激の運動方向と反対の方向に体が動いているように感じる錯覚である\cite{妹尾武治2014ベクションとその周辺の近年の動向}．例として，停止した電車から反対側の動き出している電車を見ると，まるでこちらの電車が動いているように感じるといったことが挙げられる．
 
     また飛行中の鳥の様子を体験する研究の一例としてBirdly\cite{rheiner2014birdly}がある．この研究は鳥の1人称視点での景色の映像と，鳥の体に見立てた装置にうつ伏せで乗って手と腕で操作し翼を動かすことで，飛行中の鳥のような体験をするものである．
+    しかし，台の上にうつ伏せになって腕や手を羽ばたかせるのはそれなりの疲労感が生まれる．またVR体験において体の可動域を制限されるのは没入感を生むことに関して欠点となりえる．
+
+    % もう一つの例として，上半身のジェスチャーでドローンを操作し飛んでいる感覚を得る？ものがある．こちらは先ほどのものよりも疲労感が多く，外部デバイスも必要である．
+
+    以上を踏まえ本研究では以下のような方法をとる．浮遊感の提示にはベクションを使用．また仮想翼の操作方法として，手足を用いないことによるVR体験中の疲労感を軽減と没入感の増大を見込んで，四肢以外を用いた仮想翼の操作方法を提案する．
 
   \subsection{仮想翼の提示}
     ヒトは自分自身の身体がどのような形をしているかのイメージ（身体像）を持っている．それによって自己とそれ以外を区別することができる．しかし，自己以外の部分に身体像が拡張する場合がある．身体像の拡張に関する研究についてラバーハンド錯覚についての研究がある\cite{botvinick1998rubber}．目の前にラバーハンドを置きその横に自分の手を並べて仕切り板等で見えなくする．その後，ラバーハンドと自分の手を筆で同時に触ることで，ラバーハンドが自分の手であるかのように感じるという錯覚である．
-
     
-  
-  % テレイグ，人間拡張関係の引用＋EMSを用いた力覚
+    このように提示される視覚からの情報と，触覚の情報の位置が一致または近しければ身体像を拡張することができると考える．本研究では仮想翼の視覚情報と触覚情報の位置を揃えることで，ヒトに仮想翼の提示を行う．  
 
-  本研究では，
-
-  % \begin{figure}[b]
-  %   \begin{center}
-  %     \includegraphics[width=0.60\hsize]{\FIGDIR/Birdly.jpg}%
-  %     \caption{Birdly}
-  %     \figlabel{Birdly}
-  %   \end{center}
-  % \end{figure}
+    % EMSを用いた力覚については後ろで
 
 
-  % 関連研究について触れる部分を追記する
-  % 関連研究を踏まえて四肢以外で操作するメリットについて述べる
-
- 
+    % \begin{figure}[b]
+    %   \begin{center}
+    %     \includegraphics[width=0.60\hsize]{\FIGDIR/Birdly.jpg}%
+    %     \caption{Birdly}
+    %     \figlabel{Birdly}
+    %   \end{center}
+    % \end{figure}
   
 
-\section{羽ばたいて飛ぶ感覚の提示方法}
-  実験環境の概要を\figref{experimental_method}に示す．実験の環境は2つに分類でき，ヒトからデバイスへ情報を送る部分・デバイスからヒトへ情報を送る部分で構成されている．
+\section{仮想翼で羽ばたいて飛ぶ感覚の提示方法}
+  実験環境の概要を\figref{experimental_method_eng}に示す．実験の環境は2つに分類できる．一つはヒトからデバイスへ情報を送る部分．もう一つはデバイスからヒトへ情報を送る部分で構成されている．
   
   \begin{figure}[b]
     \begin{center}
-      \includegraphics[width=0.90\hsize]{\FIGDIR/experimental_method}%
+      \includegraphics[width=1.00\hsize]{\FIGDIR/experimental_method_eng}%
       \caption{Experimental method}
-      \figlabel{experimental_method}
+      \figlabel{experimental_method_eng}
     \end{center}
   \end{figure}
   % 図のモデルを人形にした方が良い，余計な情報を削除
-  % 英語にする
-  
-  ヒトからデバイスの部分，つまり仮想翼の操作は，人体の筋電値を読み取みとり，その値によって仮想翼が動作するように設計を行った．\figref{Manipulation_of_virtual_wings_using_Myo}に手首の動きに
-  合わせて仮想翼の骨組みを動作させた実験の様子を示す．筋電値計測デバイスはMyo（Thalmic labs社），仮想翼の骨組みはUnityを用いて作成した．翼の操作方法は手首を内側に曲げると翼が内側へ曲がり，手首を外側に開くと翼も外側へ開くようにした．実験より，筋電値による翼の操作の有用性を確認した．また，3人称視点ではやはり仮想翼が自分の背中から生えているという状況を想定しづらいことも確認した．
 
-  \begin{figure}[b]
-    \begin{center}
-      \includegraphics[width=0.90\hsize]{\FIGDIR/Manipulation_of_virtual_wings_using_myo.pdf}%
-      \caption{Manipulation of virtual wings using Myo}
-      \figlabel{Manipulation_of_virtual_wings_using_Myo}
-    \end{center}
-  \end{figure}
-  % この図めっちゃ分かりづらいので差し替え（筋電値のグラフと翼の動きが対応してる図とか）
-  
+  \subsection{ヒトからデバイス}
+    ヒトからデバイスの部分，つまり仮想翼の操作は，人体の筋電値を読み取みとり，その値によって仮想翼が動作するように設計を行った．\figref{Manipulation_of_virtual_wings_using_Myo_v2ario}に手首の動きに
+    合わせて仮想翼の骨組みを動作させた実験の様子を示す．筋電値計測デバイスはMyo（Thalmic labs社），仮想翼の骨組みはUnityを用いて作成した．翼の操作方法は手首を内側に曲げると翼が内側へ曲がり，手首を外側に開くと翼も外側へ開くようにした．実験より，筋電値による翼の操作の有用性を確認した．また，3人称視点ではやはり仮想翼が自分の背中から生えているという状況を想定しづらいことも確認した．
 
-  デバイスからヒトへの部分，ヒトへ仮想翼を使って羽ばたいて飛んでいる感覚を提示する方法は，力覚提示による仮想翼が羽ばたいている様子・視覚による翼で飛んでいる様子を感じさせる部分の2つに分類する．
-  
-  力覚提示による仮想翼が羽ばたいている様子を感じさせる部分は，翼のそれぞれにかかる力をヒトへ提示する際，\figref{How2present_force_applied2wings}のように力覚の提示位置をヒトの背中に対応させることで翼がしなっていく様子を再現する．本研究では力覚の提示方法は2種類検討しており，1つ目はモータによる振動または押す力，2つ目は低周波治療器といったEMS機器により筋肉を力ませることで疑似的に力覚を提示する手法である．
+    \begin{figure}[b]
+      \begin{center}
+        \vspace{3mm}
+        \includegraphics[width=1.00\hsize]{\FIGDIR/Manipulation_of_virtual_wings_using_myo_v2ario.pdf}%
+        \caption{Manipulation of virtual wings using Myo}
+        \figlabel{Manipulation_of_virtual_wings_using_Myo_v2ario}
+      \end{center}
+    \end{figure}
+    
+    
+  \subsection{デバイスからヒト}
+    デバイスからヒトへの部分，ヒトへ仮想翼を使って羽ばたいて飛んでいる感覚を提示する方法は，力覚提示による仮想翼が羽ばたいている様子・視覚による翼で飛んでいる様子を感じさせる部分の2つに分類する．
+    
+    力覚提示による仮想翼が羽ばたいている様子を感じさせる部分は，翼のそれぞれにかかる力をヒトへ提示する際，\figref{How2present_force_applied2wings_eng}のように力覚の提示位置をヒトの背中に対応させることで翼がしなっていく様子を再現する．本研究では力覚の提示方法は2種類検討しており，1つ目はモータによる振動または押す力，2つ目は低周波治療器といったEMS機器により筋肉を力ませることで疑似的に力覚を提示する手法である．EMSとは神経筋電気刺激療法のことであり，筋肉や運動神経へ電気刺激を与えることで筋収縮を促し，筋肉の増強や萎縮の予防等をする治療法である．この原理を応用し，筋肉を収縮させることで疑似的に重量を知覚させる研究がある\cite{小川剛史2017電気的筋肉刺激が重量知覚に及ぼす影響の分析}．本研究においては筋肉を収縮させることで，仮想翼にかかる力を再現する．
 
-  視覚による翼で飛んでいる様子を感じさせる部分はHMDを用いる．具体的には，ベクションを用いてヒトがVR空間を飛んでいる様子・自分の背中から生えている翼が羽ばたいている様子をHMDに映すことで翼を用いて飛んでいる様子を再現する．
+    視覚による翼で飛んでいる様子を感じさせる部分はHMDを用いる．具体的には，ベクションを用いてヒトがVR空間を飛んでいる様子・自分の背中から生えている翼が羽ばたいている様子をHMDに映すことで翼を用いて飛んでいる様子を再現する．
 
-  \begin{figure}[t]
-    \begin{center}
-      \includegraphics[width=0.90\hsize]{\FIGDIR/How2present_force_applied2wings.pdf}%
-      \caption{How to present force applied virtual wings}
-      \figlabel{How2present_force_applied2wings}
-    \end{center}
-  \end{figure}
-  % 人体図の注釈はいらない（ジャマ）
+    \begin{figure}[b]
+      \begin{center}
+        \includegraphics[width=1.00\hsize]{\FIGDIR/How2present_force_applied2wings_eng.pdf}%
+        \caption{How to present force applied virtual wings}
+        \figlabel{How2present_force_applied2wings_eng}
+      \end{center}
+    \end{figure}
 
 
 
 \section{被験者実験}
-  \subsection{実験の目的及び意義}
-    VR技術の発展に伴い、より現実に近い感覚を提示できるシステムの開発に必要な知見を実験を通して得ることを目的とする。
-    翼で飛ぶといった日常では起こりえない感覚を人に提示するためには、どのようなシステムの働きが人の感覚にとってリアルに感じられるかを人の主観により評価する必要がある。
-    当該研究の成果としてVR技術の発展が見込め、例えば効果的な職業訓練として利用できる。
+  % \subsection{実験方法}
+    本実験は「東京農工大学人を対象とする研究に関する倫理審査委員会の倫理審査」を通過している．
+    被験者の募集は学内メーリングリスト, 掲示, アルバイト募集用WEBサイトなどを利用して行う. 被験者の選定方針に関しては特に定めない．ただし, 未成年の場合には保護者の承諾を取ることとする. 
+
+    被験者はHMD（ヘッドマウントディスプレイ），筋電計測装置，力覚提示装置を装着し，仮想翼を操縦する．この際，被験者の筋電のデータを記録する．
+    筋電計測装置に関してはMyoWare（Advancer Technologies）を使用し体に直接貼り付けて計測を行う．筋電取得位置は関節動作を伴わない静的な筋収縮が容易な部位である胸肩部・腹部・臀部を検討している．
+    力覚提示装置に関しては，ハプティックスーツ（振動または押す力の提示）の装着，またはEMSによる力覚提示を行う場合はEMS機器のパッドを体に直接張り付ける．力覚提示の位置に関しては仮想翼が存在する背中から体の側面を検討している．
+    
+    その後，操縦中の没入感に関して被験者に質問に答えてもらう．被験者へは筋電取得箇所と力覚提示提示位置ごと没入感の違いについての質問を行う．具体的には以下のような内容を検討している．
+    \begin{itemize}
+      \item 没入感が高かった順に力覚提示位置を選択
+      \item 没入感が高かった順に筋電計測位置を選択 %仮想翼の操作がしやすかった順
+      \item ハプティックスーツとEMS機器没入感が高かったか
+      \item 没入感において力覚提示位置と筋電計測位置のどちらがより重要だと感じたか
+      \item どの組み合わせが一番没入感が高かったか
+    \end{itemize}
+    % 質問の意図に関しては記載する必要があるのだろうか．（スペース的に省略しても良いのだろうか）
+
+    これらの実験は実験内容に応じて説明書と同意書を用意し、被験者の同意を得て実験を行う．
+
+    また，被験者に生じるリスクとしては，実験中に発生するVR酔いや不特定多数の被験者がでいりするために起こる新型コロナウイルス感染症への感染がある．これらのリスクは，被験者が体調に違和感を感じたらすぐに対応，実験前の感染症予防対策などを十分に行うといったことをすることで対策をする．
   
-  \subsection{実験方法}
-    学内メーリングリスト、掲示、アルバイト募集用WEBサイトなどを利用して被験者の募集を行う。被験者の選定方針に関しては特に定めない．ただし、未成年の場合には保護者の承諾を取ることとする。
-    被験者はHMD（ヘッドマウントディスプレイ）（図1）、筋電計測装置（図2）、フィードバック装置（電気・力）（図3）を装着し、3Dモデルを操縦する。この際、被験者の筋電のデータを記録する。筋電計測装置とフィードバック装置に関しては、腕や首，背中に直接貼り付ける。その後、操縦中の没入感に関して被験者は質問に答える。
-    HMD、筋電計測装置、フィードバック装置は市販品を用いる。
-    これらの実験は実験内容に応じて説明書と同意書を用意し、被験者の同意を得て実験を行う。
+  % \subsection{被験者に生じるリスクとその対処法}
+  %   被験者に生じるリスクとその対処法に関しては以下のように行う．
+  
+  %   生じるリスク
+  %   \begin{itemize}
+  %     \item 実験中に発生する浮遊感やVR酔い
+  %     \item 不特定多数の被験者が実験場所に出入りするため，新型コロナウイルス感染症（Covid-19）の感染リスク
+  %   \end{itemize}
+    
+  %   対処法
+  %   \begin{itemize}
+  %     \item 被験者には事前に気分が悪くなったり，疲労を感じた場合いつでも休憩を申し出て良い旨を伝え，申し出があった場合ただちに対応
+  %     \item 参加者が手に触れる可能性のある箇所を，毎実験毎にアルコールで消毒する
+  %     \item 部屋の換気は，実験前・実験後に行い，実験中は20～30分毎に換気する
+  %     \item 実験実施者はマスクを着用し，説明等の対応をする
+  %     \item 実験前の被験者の消毒と体温測定
+  %   \end{itemize}
+    
 
 
-    % 以下の図をまとめた写真を用意する（HMD，センサ，低周波治療器を装着した自分）
+    % 以下の図をまとめた写真を用意する（HMD，センサ，低周波治療器を装着した自分）→言葉で説明できるならいらないかも
     % \begin{figure}[b]
     %   \begin{center}
     %     \includegraphics[width=0.80\hsize]{\FIGDIR/VIVE_PRO_EYE.jpg}%
@@ -144,17 +172,12 @@
     %   \end{center}
     % \end{figure}
 
-  \subsection{被験者に生じるリスクとその対処法}
-    実験中に発生する浮遊感やVR酔い。
-    不特定多数の被験者が実験場所に出入りするため，新型コロナウイルス感染症（Covid-19）の感染リスク．
 
-    被験者には事前に気分が悪くなったり，疲労を感じた場合いつでも休憩を申し出て良い旨を伝え、申し出があった場合ただちに対応する。
-    参加者が手に触れる可能性のある箇所（ロボット含む実験用機材、ドアノブ、椅子等）を、毎実験毎にアルコールで消毒する。部屋の換気は、実験前・実験後に行い、実験中は20～30分毎に換気する。実験実施者はマスクを着用し、説明等の対応をする。
-    実験参加者は、事前に自宅などで体温測定をした上で来るように伝える。また、実験開始前に、手指の消毒と、体温測定を行う。実験前日までに37.5℃以上の発熱、または息苦しさ、強いだるさなどの強い症状のいずれかがある場合は、実験を中止とする。
-    以上の対応を取ることを、被験者募集要項に記載し、事前に周知する。
-    実験前後の換気の時間を十分に確保するため、１人の実験が終了した後、次の実験を開始するまでの時間を最低15分以上空くようにスケジュール管理を行う。
 
 \section{結言}
+  本稿では，翼を動かして飛ぶ感覚を与える研究に注目し，人の胴体部分で翼を操作しているように感じさせる方法と，VR空間で翼にかかる力を人に伝達する仕組みを提案した．被験者実験を行えるように倫理審査を行い実験環境を作成した．
+
+  今後の展望として，被験者実験を行い，その結果から得られる最も没入感が高い力覚提示位置・装置，筋電計測位置をもとにより，没入感が高いシステムを作成する．また，デバイスからヒトへの提示情報として前庭電気刺激による加速度感覚\cite{青山一真2014前庭電気刺激における逆方向不感電流を用いた加速度感覚の増強}の追加も検討している．
 
  % 少なくとも1つは参考文献をciteしないとエラーが起きる
 
