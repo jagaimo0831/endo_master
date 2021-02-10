@@ -15,7 +15,7 @@
 \begin{abstract}
   % まず日本語版（緒言ではなく要旨）を作る→英訳
   %  ヒトは古くから空を飛ぶことに憧れを抱いている．本研究では，トビトカゲ（天使）のような四肢から独立した翼が背中から生えた生物になり羽ばたいて飛ぶ感覚を提示する方法について提案する．腕を動かして羽ばたいて飛ぶ感覚を提示する研究と異なり，腕を動かさないで羽ばたいて飛ぶ感覚を提示することで，疲労感を軽減し没入感を高めることができる．本稿では，四肢を用いず翼を操作している感覚の提示方法と，VR空間で翼に作用する力をヒトに伝達する手法を提案した．また，被験者実験のために倫理審査を行い実験環境を作成した．
-  Since ancient times, people have longed to fly in the sky. In this study, we propose a method presenting the sensation of flying with flapping virtual wings independent of the limbs, such as the angel．Unlike studies that present the sensation of flying with flapping wings by moving the arms, this study presents the sensation of flying with flapping wings without moving the arms, which reduces fatigue and increases immersion. In this paper, we proposed a method of presenting the sensation of manipulating the wing without using the limbs and a method of transmitting the force acting on the wing to humans. In addition, an ethical review was conducted and an experimental environment was created for the subject experiment.
+  Since ancient times, people have longed to fly in the sky. In this study, we propose a method of presenting the sensation of flying with flapping virtual wings independent of the limbs, such as the Draco．Unlike studies that present the sensation of flying with flapping wings by moving the arms, this study presents the sensation of flying with flapping wings without moving the arms, which reduces fatigue and increases immersion. In this paper, we proposed a method of presenting the sensation of manipulating the wing without using the limbs and a method of transmitting the force acting on the wing to humans. In addition, an ethical review was conducted and an experimental environment was created for the subject experiment.
   
 
 \end{abstract}
@@ -34,20 +34,9 @@
   四肢を用いず翼を操作している感覚の提示・VR空間で翼に作用する力をヒトに提示する手法を考案し，羽ばたいて飛ぶ感覚を腕を動かさずに提示することで疲労感が減り，VR空間での没入感が増すと考える．
 
 
-\section{羽ばたいて飛ぶ感覚と仮想翼の提示}
-  \subsection{羽ばたいて飛ぶ感覚の提示}
-    本研究では「羽ばたいて飛ぶ感覚」を「浮遊感」，「飛ぶ感覚」を用いて次のように位置づける．
-    「浮遊感」とは，空中に浮いて漂っているような感覚を指す．「飛ぶ感覚」は浮遊感に空中を移動する感覚を追加したものとする．本稿で注目する「羽ばたいて飛ぶ感覚」は，飛ぶ感覚に加え，翼を羽ばたかせる感覚を追加したものである．
-
-    ベクションと呼ばれる視野の大部分に一様な運動刺激を提示すると，刺激の運動方向と反対の方向に体が動いているように感じる錯覚がある\cite{妹尾武治2014ベクションとその周辺の近年の動向}．例として，停車中の電車から動き出す他の電車の視覚情報を受け取ると，観測者側の電車が動いているように感じる現象が挙げられる．
-    浮遊感に関する研究で，ベクションによる落下感覚を分析した研究がある\cite{奥川夏輝2017VR空間における視覚刺激によって発生する落下感覚の分析}．ベクションに着目して落下感覚を分析したものである．
-
-    また飛行中の鳥を体験する研究の一例としてBirdly\cite{rheiner2014birdly}がある．操縦装置にうつ伏せで登場し手と腕を用いて翼を動かしながら，鳥視点での景色の映像を提示することで，飛行中の鳥のような体験をするものである．
-    しかし，台の上にうつ伏せの体勢になり腕や手を羽ばたかせるのは不要な疲労感が生まれる．また体の可動域を制限されることは，VR体験の没入感に対し弊害となる．本研究で翼の操作に四肢以外を用いるのは，飛行体験中の疲労感を軽減するためである．
-
-    % もう一つの例として，上半身のジェスチャーでドローンを操作し飛んでいる感覚を得る？ものがある．こちらは先ほどのものよりも疲労感が多く，外部デバイスも必要である．
-
-    上述したことを踏まえ，本研究ではベクションを用いた浮遊感の提示の手法，疲労感を軽減するために四肢以外を用いた仮想翼の操作の手法を提案する．
+\section{仮想翼の提示と仮想翼で飛ぶ感覚の提示}
+  本研究では「羽ばたいて飛ぶ感覚」を「浮遊感」，「飛ぶ感覚」を用いて次のように位置づける．
+  「浮遊感」とは，空中に浮いて漂っているような感覚を指す．「飛ぶ感覚」は浮遊感に空中を移動する感覚を追加したものとする．本稿で注目する「羽ばたいて飛ぶ感覚」は，飛ぶ感覚に加え，翼を羽ばたかせる感覚を追加したものである．
 
   \subsection{仮想翼の提示}
     ヒトは身体像と呼ばれる，自身の身体形状を想像する能力を有している．それにより自己とそれ以外を区別することができる．しかし，自己以外の部分に身体像が拡張する場合がある．身体像の拡張に関する研究についてラバーハンド錯覚についての研究がある\cite{botvinick1998rubber}．目の前にラバーハンドを置きその横に自分の手を並べて仕切り板等で見えなくする．その後，ラバーハンドと自分の手を筆で同時に触ることで，ラバーハンドが自分の手であるかのように感じるという錯覚である．
@@ -66,6 +55,20 @@
     % \end{figure}
   
 
+  \subsection{仮想翼で飛ぶ感覚の提示}
+
+
+    ベクションと呼ばれる，視野の大部分に一様な運動刺激を提示すると刺激の運動方向と反対の方向に体が動いているように感じる錯覚がある\cite{妹尾武治2014ベクションとその周辺の近年の動向}．例として，停車中の電車から動き出す他の電車の視覚情報を受け取ると，観測者側の電車が動いているように感じる現象が挙げられる．
+    浮遊感に関する研究で，ベクションによる落下感覚を分析した研究がある\cite{奥川夏輝2017VR空間における視覚刺激によって発生する落下感覚の分析}．
+
+    また，飛行中の鳥を体験する研究の一例としてBirdly\cite{rheiner2014birdly}がある．操縦装置にうつ伏せで搭乗し手と腕を用いて翼を動かしながら，鳥視点での景色の映像を提示することで，飛行中の鳥のような体験できる装置である．
+    しかし，台の上にうつ伏せの体勢になり，腕や手を羽ばたかせるのは不要な疲労感が生まれる．また体の可動域を制限されることは，VR体験の没入感に対し弊害となる．本研究で翼の操作に四肢以外を用いるのは，飛行体験中の疲労感を軽減し没入感を高めるためである．
+
+    % もう一つの例として，上半身のジェスチャーでドローンを操作し飛んでいる感覚を得る？ものがある．こちらは先ほどのものよりも疲労感が多く，外部デバイスも必要である．
+
+    上述したことを踏まえ，本研究ではベクションを用いた浮遊感の提示の手法，疲労感を軽減するために四肢以外を用いた仮想翼の操作の手法を提案する．
+
+  
 \section{仮想翼で羽ばたいて飛ぶ感覚の提示方法}
   本研究で提案する，仮想翼で羽ばたいて飛ぶ感覚を提示する方法の概要を\figref{Experimental_method_eng_v2}に示す．
   システムの概要は，「ヒトからデバイスへ情報を送るシステム」と「デバイスからヒトへ情報を送るシステム」の2つに分類した．
