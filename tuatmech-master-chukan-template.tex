@@ -10,12 +10,13 @@
 \begin{document}
 \twocolumn[%
 \title{四肢から独立した仮想翼で羽ばたいて飛ぶ感覚の提示}{Presenting the sensation of flying with flapping virtual wings independent of the limbs}
-\author{遠藤　健}{水内研究室}{Ken ENDO}
+\author{水内研究室}{遠藤　健}{Ken ENDO}
 
 \begin{abstract}
+  % まず日本語版（緒言ではなく要旨）を作る→英訳
   In the research that gives a person a floating feeling in virtual space, there are many studies that give a feeling of flying by giving a visual change. However, there are few studies that give the feeling of flying by moving wings like a bird. Furthermore, there are no studies that give the sensation of flying as a creature with wings independent of its limbs, such as a Doraco.
   In this research, we focus on research that gives the sensation of flying with flapping the wings, and consider a method that makes the wings feel like it is being operated by the human body, and a mechanism that transmits the force applied to the wing to a person in virtual space.  As a result, in the past, people felt floating by moving their arms like birds, but it is possible to feel the feeling of flying without moving their arms, and it is thought that the immersive feeling in virtual space will increase. 
-  % アブスト若干短くした方が良いか？ 
+  
 
 \end{abstract}
 
@@ -25,9 +26,9 @@
 
 \begin{small}
 \section{緒　　言}
-  VR空間で人に浮遊感を与える研究において，視覚の変化を与えることによって飛ぶ感覚を与える研究は数多くある．しかし鳥のように翼を動かして飛ぶ感覚を与える研究は少ない．さらに言えば，トビトカゲのように四肢から独立した翼を持つ生き物になりきって飛ぶ感覚を与える研究は見当たらない．
+  VR空間でヒトに浮遊感を与える研究において，視覚の変化を与えることによって飛ぶ感覚を与える研究は数多くある．しかし鳥のように翼を動かして飛ぶ感覚を与える研究は少ない．さらに言えば，トビトカゲのように四肢から独立した翼を持つ生き物になりきって飛ぶ感覚を与える研究は見当たらない．
 
-  本研究では，翼を動かして飛ぶ感覚を与える研究に注目し，人の胴体部分で翼を操作しているように感じさせる方法と，VR空間で翼にかかる力を人に伝達する仕組みを考える．それにより，従来は人が鳥のように腕を動かすことによって浮遊感を感じていたが，腕を動かさずに飛んでいる感覚を感じることが可能となり，VR空間での没入感が増すと考える．
+  本研究では，四肢から独立した翼を動かして飛ぶ感覚を与えることに注目し，ヒトの胴体部分で翼を操作しているように感じさせる方法と，VR空間で翼にかかる力をヒトに伝達する仕組みを考える．従来はヒトが鳥のように腕を動かすことによって浮遊感を感じていたがそれによって疲労感が生まれていた．腕を動かさずに飛んでいる感覚を提示することで疲労感が減り，VR空間での没入感が増すと考える．
 
 
 \section{浮遊感と仮想翼の提示}
@@ -62,12 +63,13 @@
   
 
 \section{仮想翼で羽ばたいて飛ぶ感覚の提示方法}
-  実験環境の概要を\figref{experimental_method_eng}に示す．実験の環境は2つに分類できる．一つはヒトからデバイスへ情報を送る部分．もう一つはデバイスからヒトへ情報を送る部分で構成されている．
+  本研究で提案する，仮想翼で羽ばたいて飛ぶ感覚を提示する方法の概要を\figref{experimental_method_eng}に示す．
+  システムの概要は，「ヒトからデバイスへ情報を送る部分」と「デバイスからヒトへ情報を送る部分」の2つに分類した．
   
-  \begin{figure}[b]
+  \begin{figure}[t]
     \begin{center}
       \includegraphics[width=1.00\hsize]{\FIGDIR/experimental_method_eng}%
-      \caption{Experimental method}
+      \caption{Research concept}
       \figlabel{experimental_method_eng}
     \end{center}
   \end{figure}
@@ -77,7 +79,7 @@
     ヒトからデバイスの部分，つまり仮想翼の操作は，人体の筋電値を読み取みとり，その値によって仮想翼が動作するように設計を行った．\figref{Manipulation_of_virtual_wings_using_Myo_v2ario}に手首の動きに
     合わせて仮想翼の骨組みを動作させた実験の様子を示す．筋電値計測デバイスはMyo（Thalmic labs社），仮想翼の骨組みはUnityを用いて作成した．翼の操作方法は手首を内側に曲げると翼が内側へ曲がり，手首を外側に開くと翼も外側へ開くようにした．実験より，筋電値による翼の操作の有用性を確認した．また，3人称視点ではやはり仮想翼が自分の背中から生えているという状況を想定しづらいことも確認した．
 
-    \begin{figure}[b]
+    \begin{figure}[t]
       \begin{center}
         \vspace{3mm}
         \includegraphics[width=1.00\hsize]{\FIGDIR/Manipulation_of_virtual_wings_using_myo_v2ario.pdf}%
@@ -105,79 +107,38 @@
 
 
 \section{被験者実験}
-  % \subsection{実験方法}
-    本実験は「東京農工大学人を対象とする研究に関する倫理審査委員会の倫理審査」を通過している．
-    被験者の募集は学内メーリングリスト, 掲示, アルバイト募集用WEBサイトなどを利用して行う. 被験者の選定方針に関しては特に定めない．ただし, 未成年の場合には保護者の承諾を取ることとする. 
-
-    被験者はHMD（ヘッドマウントディスプレイ），筋電計測装置，力覚提示装置を装着し，仮想翼を操縦する．この際，被験者の筋電のデータを記録する．
-    筋電計測装置に関してはMyoWare（Advancer Technologies）を使用し体に直接貼り付けて計測を行う．筋電取得位置は関節動作を伴わない静的な筋収縮が容易な部位である胸肩部・腹部・臀部を検討している．
-    力覚提示装置に関しては，ハプティックスーツ（振動または押す力の提示）の装着，またはEMSによる力覚提示を行う場合はEMS機器のパッドを体に直接張り付ける．力覚提示の位置に関しては仮想翼が存在する背中から体の側面を検討している．
+  % 実験の目的→方法の順番で書くこと
+  被験者実験では，筋電計測位置と羽ばたく感覚の提示位置を変化させた場合の没入感の違いについて検証する．
     
-    その後，操縦中の没入感に関して被験者に質問に答えてもらう．被験者へは筋電取得箇所と力覚提示提示位置ごと没入感の違いについての質問を行う．具体的には以下のような内容を検討している．
-    \begin{itemize}
-      \item 没入感が高かった順に力覚提示位置を選択
-      \item 没入感が高かった順に筋電計測位置を選択 %仮想翼の操作がしやすかった順
-      \item ハプティックスーツとEMS機器没入感が高かったか
-      \item 没入感において力覚提示位置と筋電計測位置のどちらがより重要だと感じたか
-      \item どの組み合わせが一番没入感が高かったか
-    \end{itemize}
-    % 質問の意図に関しては記載する必要があるのだろうか．（スペース的に省略しても良いのだろうか）
-
-    これらの実験は実験内容に応じて説明書と同意書を用意し、被験者の同意を得て実験を行う．
-
-    また，被験者に生じるリスクとしては，実験中に発生するVR酔いや不特定多数の被験者がでいりするために起こる新型コロナウイルス感染症への感染がある．これらのリスクは，被験者が体調に違和感を感じたらすぐに対応，実験前の感染症予防対策などを十分に行うといったことをすることで対策をする．
+  被験者はHMD（ヘッドマウントディスプレイ），筋電計測装置，羽ばたく感覚の提示装置を装着し，仮想翼を操縦する．この際，被験者の筋電のデータを記録する．
+  筋電計測装置に関してはMyoWare（Advancer Technologies）を使用し体に直接貼り付けて計測を行う．筋電取得位置は関節動作を伴わない静的な筋収縮が容易な部位である胸肩部・腹部・臀部を検討している．
+  羽ばたく感覚の提示に関しては，ハプティックスーツによる振動・押す力，またはEMS機器の筋収縮作用による疑似的な力覚提示によって行う．羽ばたく感覚提示の位置に関しては仮想翼が存在する背中から体の側面を検討している．
   
-  % \subsection{被験者に生じるリスクとその対処法}
-  %   被験者に生じるリスクとその対処法に関しては以下のように行う．
+  その後，操縦中の没入感に関して被験者に質問に答えてもらう．被験者へは筋電取得箇所と力覚提示提示位置ごと没入感の違いについての質問を行う．具体的には以下のような内容を検討している．
+  \begin{itemize}
+    \item 没入感が高かった順に筋電計測位置を選択 %仮想翼の操作がしやすかった順
+    \item 没入感が高かった順に羽ばたく感覚の提示位置を選択
+    \item 羽ばたく感覚の提示において，ハプティックスーツとEMS機器どちらの方が没入感が高かったか
+    \item 没入感において筋電計測位置の羽ばたく感覚の提示位置どちらがより重要だと感じたか
+    \item どの組み合わせが一番没入感が高かったか
+  \end{itemize}
+  % 質問の意図に関しては記載する必要があるのだろうか．（スペース的に省略しても良いのだろうか）
+    
+
+  % --------以下倫理審査の書類を参考にして作成--------------
+  % 倫理審査，コロナ関係は1段落で簡潔に触れる程度とする
+  本実験は「東京農工大学 人を対象とする研究に関する倫理審査委員会の倫理審査」を通過しており，実験は被験者の同意を得て行う．
+  % 被験者の募集は学内メーリングリスト, 掲示, アルバイト募集用WEBサイトなどを利用して行う. 被験者の選定方針に関しては特に定めない．ただし, 未成年の場合には保護者の承諾を取ることとする. 
+  また，被験者に生じるリスクとしては，実験中に発生するVR酔いや不特定多数の被験者が出入りするために起こる新型コロナウイルス感染症への感染がある．これらのリスクは，感染症予防対策などを十分に行い，被験者が体調に違和感を感じたらすぐに対応するといったことで対策をする．
   
-  %   生じるリスク
-  %   \begin{itemize}
-  %     \item 実験中に発生する浮遊感やVR酔い
-  %     \item 不特定多数の被験者が実験場所に出入りするため，新型コロナウイルス感染症（Covid-19）の感染リスク
-  %   \end{itemize}
-    
-  %   対処法
-  %   \begin{itemize}
-  %     \item 被験者には事前に気分が悪くなったり，疲労を感じた場合いつでも休憩を申し出て良い旨を伝え，申し出があった場合ただちに対応
-  %     \item 参加者が手に触れる可能性のある箇所を，毎実験毎にアルコールで消毒する
-  %     \item 部屋の換気は，実験前・実験後に行い，実験中は20～30分毎に換気する
-  %     \item 実験実施者はマスクを着用し，説明等の対応をする
-  %     \item 実験前の被験者の消毒と体温測定
-  %   \end{itemize}
-    
-
-
-    % 以下の図をまとめた写真を用意する（HMD，センサ，低周波治療器を装着した自分）→言葉で説明できるならいらないかも
-    % \begin{figure}[b]
-    %   \begin{center}
-    %     \includegraphics[width=0.80\hsize]{\FIGDIR/VIVE_PRO_EYE.jpg}%
-    %     \caption{HMD:VIVE PRO EYE}
-    %     \figlabel{VIVE_PRO_EYE}
-    %   \end{center}
-    % \end{figure}
-
-    % \begin{figure}[b]
-    %   \begin{center}
-    %     \includegraphics[width=0.80\hsize]{\FIGDIR/MyoWare.jpg}%
-    %     \caption{筋電計測装置:MyoWare}
-    %     \figlabel{MyoWare}
-    %   \end{center}
-    % \end{figure}
-
-    % \begin{figure}[b]
-    %   \begin{center}
-    %     \includegraphics[width=0.70\hsize]{\FIGDIR/OMRON_HV-F125.jpg}%
-    %     \caption{力覚提示装置:OMRON低周波治療器}
-    %     \figlabel{OMRON_HV-F125}
-    %   \end{center}
-    % \end{figure}
+  % 被験者実験の様子（予定）の図があるともっとわかりやすいかも
 
 
 
 \section{結言}
-  本稿では，翼を動かして飛ぶ感覚を与える研究に注目し，人の胴体部分で翼を操作しているように感じさせる方法と，VR空間で翼にかかる力を人に伝達する仕組みを提案した．被験者実験を行えるように倫理審査を行い実験環境を作成した．
+  本稿では，翼を動かして飛ぶ感覚を与える研究に注目し，ヒトの胴体部分で翼を操作しているように感じさせる方法と，VR空間で翼にかかる力をヒトに伝達する仕組みを提案した．被験者実験を行えるように倫理審査を行い実験環境を作成した．
 
-  今後の展望として，被験者実験を行い，その結果から得られる最も没入感が高い力覚提示位置・装置，筋電計測位置をもとにより，没入感が高いシステムを作成する．また，デバイスからヒトへの提示情報として前庭電気刺激による加速度感覚\cite{青山一真2014前庭電気刺激における逆方向不感電流を用いた加速度感覚の増強}の追加も検討している．
+  今後の展望として，筋電計測位置・羽ばたく感覚の提示位置を変化させた場合の没入感の違いについて検証するために被験者実験を行う．その結果から得られる最も評価が高い筋電計測位置・羽ばたく感覚の提示位置より，没入感が高いシステムを作成する．また，デバイスからヒトへの提示情報として前庭電気刺激による加速度感覚\cite{青山一真2014前庭電気刺激における逆方向不感電流を用いた加速度感覚の増強}の追加も検討している．
 
  % 少なくとも1つは参考文献をciteしないとエラーが起きる
 
