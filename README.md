@@ -61,12 +61,15 @@ $ latexmk -pvc main.tex
 - 対処法
 	- 環境構築
 		- Texliveのインストール
-		  $ sudo apt-get install texlive-full xzdec
+		  $ sudo apt install texlive-full xzdec
 		
 		- apt update
 		- gcc のインストール
 		- エラーコードに沿ってetc
 
 	- make pdf
+
+- エラー内容
+	- 少なくとも1つは参考文献をciteしないとエラーが起きる
 
 
