@@ -5,7 +5,7 @@
 *.bbl
 *.toc
 *.out
-*.pdf
+#*.pdf
 out2uni
 *.bb
 *~
