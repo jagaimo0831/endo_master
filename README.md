@@ -50,18 +50,18 @@ $ latexmk -pvc main.tex
 ##エラー
 
 最初のmakeでエラー
+- 1
+	- エラー内容
+		- endo@endo-ThinkPad-T550:~/prog/prog_AY2020/endo_master$ make pdf
+		- (cd ./fig; ebb *.jpg *.JPG *.gif)
+		- /bin/sh: 1: ebb: not found
+		- Makefile:35: recipe for target 'main.dvi' failed
+		- make: *** [main.dvi] Error 127
 
-- エラー内容
-	- endo@endo-ThinkPad-T550:~/prog/prog_AY2020/endo_master$ make pdf
-	- (cd ./fig; ebb *.jpg *.JPG *.gif)
-	- /bin/sh: 1: ebb: not found
-	- Makefile:35: recipe for target 'main.dvi' failed
-	- make: *** [main.dvi] Error 127
-
-- 対処法
+	- 対処法
 	- 環境構築
 		- Texliveのインストール
-		  $ sudo apt install texlive-full xzdec
+			$ sudo apt install texlive-full xzdec
 		
 		- apt update
 		- gcc のインストール
@@ -69,8 +69,16 @@ $ latexmk -pvc main.tex
 
 	- make pdf
 
-- エラー内容
-	- 少なくとも1つは参考文献をciteしないとエラーが起きる
-		- エラーの種類は様々なのでとりあえずテキトーに参考文献を載せておきましょう
+- 2
+	- エラー内容
+		- 少なくとも1つは参考文献をciteしないとエラーが起きる
+			- エラーの種類は様々なのでとりあえずテキトーに参考文献を載せておきましょう
+
+- 3 
+	- mainの1行目にproblemが出てくる問題
+
+- 4
+	- jty1 hogehoge って言われる
+	- mainに \usepackage{jtygm} を追記
 
 

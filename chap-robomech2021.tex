@@ -52,6 +52,173 @@ VR装置を用いて\figref{WingMan.png}のように羽ばたいて飛ぶ感覚�
 
     \fig{How2present_force_applied2wings_eng.pdf}{width=1\hsize}{How to present force applied virtual wings}
 
+    \fig{hmd_vection.png}{width=1\hsize}{Virtual presentation by HMD}
+    
+    次に，仮想翼からヒトへ情報を与える方法について述べる．
+
+    ヒトへ働きかける感覚として主に五感が挙げられる．
+    ヒトへ働きかける情報として，五感の中でも力覚（触覚）と視覚，聴覚が重要と考えた．
+    聴覚に関しては空間的定位，ここでは翼のある場所を認識する場合において，一般的に視覚よりも情報としての重要度が低い\cite{岡嶋克典20182}ので今回は不採用とする．
+    以上を踏まえて本研究では，五感の中でも力覚（触覚）と視覚を用いて仮想翼からの情報を提示する．
+
+    \subsubsection{力覚を用いた仮想翼からヒトへの情報提示}
+
+    力覚を用いた提示は，
+    \figref{How2present_force_applied2wings_eng.pdf}
+    のように羽ばたく際に翼の場所ごとに作用する力を，ヒトの体に対応させることで，翼が連動的にしなっている様子を伝える．
+
+    力覚提示の種類として2種類について比較した．
+    1つ目は，モータによる振動または押す力を活用し力覚を提示する．
+    2つ目は，EMS（神経筋電気刺激療法）という筋肉や運動神経へ電気刺激を与えることで筋収縮を促し，筋肉の増強や萎縮の予防等をする治療法を用いたものである．EMSにより筋肉を収縮させることで，疑似的に重量を知覚させる研究がある\cite{小川剛史2017電気的筋肉刺激が重量知覚に及ぼす影響の分析}．本研究では，EMS機器により筋収縮を起こすことで疑似的に力覚を提示する．
+    
+    \subsubsection{視覚を用いた仮想翼からヒトへの情報提示}
+ 
+
+    視覚を用いた提示は，\figref{hmd_vection.png}のようにUnityで作成した映像をHMDに出力することで行う．HMDに出力される映像は，空中を移動している様子と背中から翼が生えている様子である．
+
+    空中を移動している様子の提示について述べる．
+    ベクションと呼ばれる，視野の大部分に一様な運動刺激を提示すると刺激の運動方向と反対の方向に体が動いているように感じる錯覚がある\cite{妹尾武治2014ベクションとその周辺の近年の動向}．例として，停車中の電車から動き出す他の電車の視覚情報を受け取ると，観測者側の電車が動いているように感じる現象が挙げられる．
+    浮遊感に関する研究で，ベクションによる落下感覚を分析した研究がある\cite{奥川夏輝2017VR空間における視覚刺激によって発生する落下感覚の分析}．
+    空中を移動している様子の提示はベクションを用いる．
+
+    背中から翼が生えている様子は，使用者の背中から翼が生えている可のような映像を出力することで再現する．  
+
+
+    \section{実験装置のシステム}
+    本稿では\figref{Experiment_equipment_system_eng.pdf}のような，筋電計測装置で計測した値を，端末上のソフトウェア（Unity）に送り，そこから仮想翼と力覚提示装置を動作させるシステムを作成した．
+    また，このシステムを用いて力覚提示方法として振動とEMSを使用した実験を行った．
+    % そして，このシステムを用いた被験者実験の準備を行った．
+
+    \fig{Experiment_equipment_system_eng.pdf}{width=1\hsize}{Experiment equipment system}
+
+
+    %実験器具
+    \fig{myo_armband.pdf}{width=1\hsize}{Myo}
+    \fig{virtualwingborn.png}{width=1\hsize}{Virtual Wings model version 1}
+
+    %実験の様子
+    \fig{Manipulation_of_VirtualWings_using_Myo.pdf}{width=1\hsize}{Manipulation of virtual wings skeleton using Myo}
+
+    力覚提示として振動を用いた実験の環境としては，ヒトから仮想翼の部分（筋電の計測）と仮想翼からヒトへの振動提示の両方を，筋電センサーを搭載したマルチジェスチャーハンドであるMyo（\figref{myo_armband.pdf}(a), Thalmic社）で行った．
+
+    また視覚提示として用いた仮想翼は\figref{virtualwingborn.png}(b)に示すものを用いた．
+
+    仮想翼の操作は\figref{Manipulation_of_VirtualWings_using_Myo.pdf}のように，手首を内側に曲げると翼も内側に羽ばたき，手首を外側に曲げると翼が外側へ開くように設計した．また，力覚提示は翼が内側に羽ばたく際に合わせてMyoが振動するように行った．
+
+    \tabref{exp1_result}に，実験中の没入感に関する各項目に対する主観評価を示す．
+        % 実験の結果
+        \begin{table}[h]
+            \begin{center}
+                \caption{Results of an experiment using vibration as a force sense presentation}
+                \scalebox{0.75}
+                {
+                    \begin{tabular}{l|c}
+                        \hline
+                        Position(EMG/Vibration) & Arm/Arm \\\hline
+                        Sense of having wings & 1 \\
+                        Sense of meneuvering the wings & 4 \\
+                        Sense of flying with wings & 1 \\
+                        Sense of air resistance & 4 \\\hline
+                    \end{tabular}
+                }
+                \tablabel{exp1_result}
+            \end{center}
+        \end{table}
+    
+
+        実験より主観ではあるが，力覚提示として振動を用いることの有用性，3人称視点での視覚提示の不十分であることを確認した．また，ジェスチャーよる仮想翼の操作は関節動作を伴いことで不要な疲労感を生む．これは飛行体験において翼の操作における障害となり，没入感の妨げになると考えられる．飛行体験において，力みといった関節動作を伴わない筋収縮による仮想翼の操作が有用である．
+
+        \subsection{力覚提示としてEMSを用いた実験}
+        %実験に用いたデバイス
+        \fig{MyoWare.pdf}{width=1\hsize}{MyoWare}
+        \fig{EMG_device_HV-F122.pdf}{width=1\hsize}{EMG device}
+        \fig{VirtualWingsV2.pdf}{width=1\hsize}{Virtual Wings model version 2}
+
+        %実験の様子
+        \fig{Movement_of_VirtualWingsV2.pdf}{width=1\hsize}{Virtual presentation of Virtual wings}
+
+        力覚提示としてEMS機器を用いた実験では，筋電計測装置としてMyoWare（\figref{MyoWare.pdf}(a), AdvanceerTechnologies社），EMS機器として低周波治療器HV-F122（\figref{EMG_device_HV-F122.pdf}(b), Omron社）を使用した．視覚提示する仮想翼としては\figref{VirtualWingsV2.pdf}(c)のモデルを\figref{Movement_of_VirtualWingsV2.pdf}のように1人称視点して提示した．
+
+        また実験の際，筋電計測位置を腕と胸，腹，力覚の提示位置を腕，腹，背中の複数個所を別々に計8通り行い，位置ごとの没入感の違いについて確認した．
+
+        翼の操作方法としては，筋電計測箇所の筋肉を力ませると翼が内側へ羽ばたき，弛緩させると翼が外側に開くように設計した．EMS装置による力覚提示は翼が内側へ羽ばたく際に行うものとした．
+
+
+        \tabref{exp2_result}に，実験中の没入感に関する各項目に対する主観評価を示す．
+        
+        \begin{table}[t]
+            \begin{center}
+                \caption{Results of experiments using EMS as force sense presentation}
+                \scalebox{0.75}
+                {
+                    \begin{tabular}{l|c|c|c}
+                        \hline
+                        % 筋電取得位置（腕）
+                        Position(EMG/EMS) & Arm/Arm & Arm/Abs & Arm/Back \\\hline
+                        Sense of having wings & 1 & 3 & 5 \\
+                        Sense of meneuvering the wings & 3 & 3 & 3\\
+                        Sense of flying with wings & 3 & 3 & 4 \\
+                        Sense of air resistance & 3 & 4 & 4 \\\hline\hline
+
+                        % 筋電取得位置（胸）
+                        Position(EMG/EMS) & Chest/Arm & Chest/Abs & Chest/Back \\\hline
+                        Sense of having wings & 2 & 3 & 5 \\
+                        Sense of meneuvering the wings & 3& 3 & 4\\
+                        Sense of flying with wings & 3 & 4 & 5 \\                        
+                        Sense of air resistance & 3 & 4 & 4 \\\hline\hline
+
+                        % 筋電取得位置（腹）
+                        Position(EMG/EMS) & Abs/Arm & & Abs/Back  \\\hline                        
+                        Sense of having wings & 2 && 5 \\                        
+                        Sense of meneuvering the wings & 4 && 5 \\
+                        Sense of flying with wings & 3 && 5 \\
+                        Sense of air resistance & 3 && 4\\\hline\hline
+                    \end{tabular}
+                }
+                \tablabel{exp2_result}
+            \end{center}
+        \end{table}
+        
+ 
+        \tabref{exp2_result}より，力覚の提示位置が背中に近づくほど没入感に関する評価が高くなっている．
+        EMS装置を用いた力覚提示の有効性，没入感において筋電計測位置よりも力覚提示位置の方が重要であることを確認した．
+        さらに，本来人間に備わっていない部位である翼の存在を感じ，それを操作している感覚も得られた．
+
+\section{被験者実験}
+\fig{position_of_mesurement.png}{width=1\hsize}{position of mesurement}
+
+  % 実験の目的→方法の順番で書くこと
+  被験者実験では，筋電計測位置と羽ばたく感覚の提示位置を変化させた場合の没入感の違いについて検証する．
+    
+  被験者はHMD，筋電計測装置，羽ばたく感覚の力覚提示装置を装着し，仮想翼を操縦する．この際，被験者の筋電のデータを記録する．
+  筋電計測装置に関してはMyoWareを使用し体に直接貼り付けて計測を行う．筋電取得位置は関節動作を伴わない静的な筋収縮が容易な部位である胸肩部・腹部・臀部を検討している．
+  羽ばたく感覚の力覚提示に関しては，ハプティックスーツ等による振動・押し力，またはEMS機器の筋収縮作用による疑似的な力覚提示によって行う．羽ばたく感覚の提示位置に関しては仮想翼が存在する背中から体の側面を検討している．
+  
+  その後，操縦中の没入感に関してアンケートを行う．被験者へは筋電取得箇所と力覚提示提示位置ごと没入感の違いについての回答を得る．具体的には以下のような内容を検討している．
+  \begin{itemize}
+    \item 筋電計測位置別の没入感
+    \item 力覚提示位置別の没入感
+    \item 振動・押し力提示機器とEMS機器の没入感
+    \item 筋電計測位置と力覚提示位置の重要性比較
+    \item 一番没入感の高い組み合わせ
+  \end{itemize}
+
+  
+  % --------以下倫理審査の書類を参考にして作成--------------
+  % 倫理審査，コロナ関係は1段落で簡潔に触れる程度とする
+  本実験は「東京農工大学 人を対象とする研究に関する倫理審査委員会の倫理審査」を通過しており，実験は被験者の同意を得て行う．
+  % 被験者の募集は学内メーリングリスト, 掲示, アルバイト募集用WEBサイトなどを利用して行う. 被験者の選定方針に関しては特に定めない．ただし, 未成年の場合には保護者の承諾を取ることとする. 
+  また，被験者に生じるリスクとしては，実験中に発生するVR酔いや新型コロナウイルス感染症への感染がある．これらのリスクは，感染症予防対策を十分に行い，被験者が体調に違和感を感じたらすぐに対応することで対策をする．
+  
+  % 被験者実験の様子（予定）の図があるともっとわかりやすいかも
+
+
+  \section{結言}
+  本稿では，翼を動かして飛ぶ感覚を与える研究に注目し，四肢を用いず翼を操作している感覚の提示方法と，VR空間で翼に作用する力をヒトに伝達する手法を提案した．
+  実験装置のシステムを作成し，振動とEMS装置による力覚提示についての有用性についての実験を行った．実験より主観ではあるが，力覚提示として振動とEMS装置を用いることの有用性を確認し，ヒトに本来備わっていない部位である翼の存在を感じ，それを操作している感覚を得た．
+%   そして，被験者実験のために倫理審査を行い実験の方法と環境について検討をした．
+
+  今後の展望として，ヒトによる没入感を調査するために被験者実験を行う．そして，筋電計測位置・力覚提示位置を変化させた場合の没入感の違いについて検証する．その結果から得られる最も評価が高い筋電計測位置・力覚提示位置より，没入感を向上させる．また，デバイスからヒトへの提示情報として前庭電気刺激による加速度感覚\cite{maeda2005shaking}\cite{青山一真2014前庭電気刺激における逆方向不感電流を用いた加速度感覚の増強}の追加し，さらに飛行体験の没入感を高めることも検討している．
 
 
 
