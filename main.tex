@@ -16,6 +16,20 @@
 \usepackage{url} % \url のために必要。パッケージが無い人は探して入れる。
 %% \url{http://nile.ulis.ac.jp/~yuka/}のようにして使う。
 
+% ハイパーリンク関係のセットアップ
+\usepackage[dvipdfmx]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    pdftitle={Sharelatex Example},
+    % bookmarks=true,
+    pdfpagemode=FullScreen,
+    }
+\urlstyle{same}
+\usepackage{csquotes} 
+
 \newcommand{\FIGDIR}{./fig}        %図を置くディレクトリを指定する
 
 
@@ -46,7 +60,7 @@
 % \include{chap-robomech2021}
 
 \include{chap-introduction}
-\include{chap-relatedresearchi}
+\include{chap-relatedresearch}
 \include{chap-method}
 \include{chap-experiment}
 \include{chap-conclusion}

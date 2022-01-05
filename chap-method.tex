@@ -53,7 +53,93 @@
         背中から翼が生えている様子は，使用者の背中から翼が生えている可のような映像を出力することで再現する．  
 
 
+\section{筋電計測について}
 
+\section{触覚提示について}
 
+\section{視覚提示について}
 
+\section{流体シミュレータについて} 
+%流体シミュレータは結局使わなかったけど折角調べてあったのでとりあえず書いとく...
+    空気から受ける力をシミュレーションし，その力をヒトへ与えることで翼で羽ばたいて飛ぶ感覚を提示する．空気から受ける力をシミュレートするのに流体シミュレータを用いる．使用する流体シミュレータの候補として以下のソフトウェアが挙げられる．
+
+    
+        \begin{itemize}
+        \item \href{http://flowsquare.com/jp/}{Flowsquare}
+            \begin{itemize}
+            \item 開発: Nora Scientific(2009年)
+            \item 特徴: 2次元非定常，非反応/反応性，完全圧縮性/非圧縮性流体のシミュレーションソフト 
+            \item 対応OS: Windows
+            \item 料金: 無料
+            % \item 無料(典型的な流体シミュレーションソフトは1ライセンスあたり数10万くらい(参考:\href{https://icfd.co.jp/product/price.html}{株式会社流体力学研究所})
+            % \item 専門知識(プログラミング・CAD・メッシュ生成・前処理(初期場ほ生成)・後処理etc)を必要としない．\\
+            % -\textgreater ペイントソフトを用いて解析対象の絵を書く，解析したい条件(流体速度)をテキストファイルに入力
+            \end{itemize}
+            
+        \item \href{https://fsp.norasci.com/}{Flowsquare+}
+            \begin{itemize}
+            \item 開発: Nora Scientific
+            \item 特徴:
+                \begin{itemize}
+                \item Flowsqureの新バージョン.
+                \item 3次元の解析に対応
+                \item CFD(Computational Fluid Dynamics:数値流体力学)搭載
+                \end{itemize}
+            \item 対応OS: Windows
+            \item 料金: 無料
+            % \textless\textless 通常100万以上のコスト
+            % \item 以前と同様に専門知識不要
+            \end{itemize}
+            
+        \item \href{https://fastar.chofu.jaxa.jp/}{FaSTAR}
+            \begin{itemize}
+            \item 開発: JAXA (宇宙航空研究開発機構)
+            \item 特徴: 
+                \begin{itemize}
+                \item Fast Unstructuired CFD Code
+                \item 高速非構造格子(任意の形状のメッシュ)に対応した圧縮性流体解析ソルバー
+                \item 航空機や宇宙器などの空力解析に適する
+                \end{itemize}
+            \item 料金: 授業等の教育目的に限り無償で提供
+            \end{itemize}
+            
+        \item \href{https://altairhyperworks.jp/product/ultrafluidx}{ultraFluidX}
+            \begin{itemize}
+            \item GPUが必要 (というかサーバーが1基必要...)
+            \end{itemize}
+        
+        \item \href{https://www.openfoam.com/}{OpenFOAM}
+        
+        \item \href{http://www.ciss.iis.u-tokyo.ac.jp/dl/}{FrontFlow/blue}
+            \begin{itemize}
+            \item 国産
+            \item blue: 乱流音場用,  red: 乱流燃焼用
+            \end{itemize}
+        
+        \item \href{http://www.cenav.org/kdb/?page_id=328}{FrontFlow/violet Cartesian}
+            \begin{itemize}
+            \item 直交格子を用いた実用複雑系流体解析プログラム
+            \end{itemize}
+        
+        \item \href{http://www.cenav.org/kdb/?page_id=334}{FrontWorkBench}
+            \begin{itemize}
+            \item 流体・構造・音響錬成解析の自動設定
+            \end{itemize}
+        
+        \item \href{https://www.blender.org/download/}{Blender}
+            \begin{itemize}
+            \item コンピュータグラフィックスソフトで有名
+            \item Unityでも流体解析はできる
+            \end{itemize}
+
+        \item \href{https://fenicsproject.org/}{FEniCS}
+            \begin{itemize}
+            \item pythonやC++で開発可能
+            \item 英語
+            \end{itemize}
+        
+        \end{itemize}
+
+        手持ちのノートPCのスペックで使用可能(コロナで在宅な為)，無償，3次元シミュレーションが出来る，という観点から今回はFlowSqure+を使用する．
+        
 \section{おわりに}
