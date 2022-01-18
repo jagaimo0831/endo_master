@@ -82,3 +82,12 @@ $ latexmk -pvc main.tex
 	- mainに \usepackage{jtygm} を追記
 
 
+# その他
+* Markdownファイルについて
+    * 書き方  
+        >[(Qiita) Markdown記法一覧](https://qiita.com/oreo/items/82183bfbaac69971917f)
+    * プレビューの仕方  
+        VScodeの機能(サイドバイサイドにプレビュー表示)：[Ctrl] + [K] → [V]
+
+
+
