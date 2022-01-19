@@ -60,40 +60,63 @@
         背中から翼が生えている様子は，体をひねって後ろを見ると使用者の背中から翼が生えている様子を出力する．また，翼を羽ばたかせる際に，視界に翼を広げたり閉じたりする様子を描画を行う．以上より，背中から翼が生え羽ばたく様子を提示する．
 
         \subsubsection{視覚提示を行うデバイス}
-            \fig{hmd-vive_pro_eye.jpg}{width=1\hsize}{Head Mounted Display（HTC VIVE PRO EYE）}\cite{htc-vive}
+            \fig{hmd-vive_pro_eye.jpg}{width=1\hsize}{Head Mounted Display（HTC VIVE PRO EYE）\cite{htc-vive}}
 
             視覚の提示には，\figref{hmd-vive_pro_eye.jpg}のようなヘッドマウントディスプレイ（以下HMD）を用いる．HMDは頭部に装着するディスプレイであり，ゴーグル型やメガネ型の種類が存在する．テレビやモニターのような，一般的なディスプレイとは異なり眼前に映像が表示され，視界を占める映像の割合が多くなるため，映像への没入感が高い．
 
             以下に，HMDの大まかな分類と特徴，製品例を示す．
+            % 特徴について述べていない
             \begin{itemize}
-            \item 
+            \item ゴーグル型\\
+                ...眼の回りを完全に覆うタイプ．スタンドアローン型，PC接続型，ゲーム機型，スマホ型がある．
+                \begin{itemize}
+                \item スタンドアローン型\\
+                    ...PCとの接続等が不要で，単体でVR体験が可能な機器．
+                    \begin{itemize}
+                    \item VIVE Flow
+                    \item Meta Quest2
+                    \item HTC Vive Focus 3
+                    \end{itemize}
+                \item PC接続型
+                    \begin{itemize}
+                    \item HTC VIVE PRO
+                    \item Windows MR
+                    \item Valve Index
+                    \item Pimax
+                    \item Varjo
+                    \end{itemize}
+                \item ゲーム機型
+                    \begin{itemize}
+                    \item PlayStation VR
+                    \item Nintendo Switch Labo: VR Kit
+                    \end{itemize}
+                \item スマホ型
+                    \begin{itemize}
+                    \item ハコスコ タタミミ 二眼
+                    \item エレコム/VRG-D02PBK
+                    \item サンワサプライ/MED-VRG1
+                    \end{itemize}
+                \end{itemize}
+
+            \item メガネ型
+                \begin{itemize}
+                \item Microsoft HoloLens2
+                \item Magic Leap1
+                \end{itemize}
             \end{itemize}
-
-
-
-        ・翼の3Dオブジェクトの準備(選定)
-
-        ・HMDの選定
-            - HMDの紹介(psvr, oculus, htc) (PC用，独立型，スマホ用)(情報まとめ)-> 選定理由
-
-        ・環境の選定?(Unity, UnrealEngine, Blender)，OS
-            - 候補と各ソフトウェアの説明，選定理由
-
-        ・terrain の説明
 
     
     \subsection{触覚の提示}
         \fig{How2present_force_applied2wings_eng.pdf}{width=1\hsize}{How to present force applied virtual wings}
+        % この図はリマッピングの身体像の拡張のやり方，実際に行ったのは道具への身体像拡張のやり方なので差し替える
 
-        力覚を用いた提示は，
-        \figref{How2present_force_applied2wings_eng.pdf}
-        のように羽ばたく際に翼の場所ごとに作用する力を，ヒトの体に対応させることで，翼が連動的にしなっている様子を伝える．
+        触覚を用いた提示は，\figref{How2present_force_applied2wings_eng.pdf}のように羽ばたく際に翼の場所ごとに作用する力を，ヒトの体に対応させることで，翼が連動的にしなっている様子を伝える．
 
         力覚提示の種類として2種類について比較した．
         1つ目は，モータによる振動または押す力を活用し力覚を提示する．
         2つ目は，EMS（神経筋電気刺激療法）という筋肉や運動神経へ電気刺激を与えることで筋収縮を促し，筋肉の増強や萎縮の予防等をする治療法を用いたものである．EMSにより筋肉を収縮させることで，疑似的に重量を知覚させる研究がある\cite{小川剛史2017電気的筋肉刺激が重量知覚に及ぼす影響の分析}．本研究では，EMS機器により筋収縮を起こすことで疑似的に力覚を提示する．
 
-    \subsubsection{触覚提示について}
+        \subsubsection{触覚提示について}
         振動と電気にした
         (電気の仕組み)
         デバイスの選択
