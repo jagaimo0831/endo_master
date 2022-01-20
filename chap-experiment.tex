@@ -10,21 +10,26 @@
     % Virtual Wingsではなく，Visual display
     % Force presentation dev -> Haptic display
 
-    主観評価実験を行う実験環境について述べる．本章では，\figref{Experiment_equipment_system_eng.pdf}のような，筋電計測装置で計測した値を，端末上のソフトウェア（Unity\footnote{Unity Technology社が開発したゲームエンジン及びゲームの統合開発環境．2005年に配信され，ポケモンGO（任天堂）やFall Guys（Mediatonic）といった様々なゲームの開発に用いられている．}）へ送信し，Unity上から視覚提示装置と触覚提示装置を動作させるシステムを用いる．
+    主観評価実験を行う実験環境について述べる．本章では，\figref{Experiment_equipment_system_eng.pdf}のような，筋電計測装置で計測した値を，端末上のソフトウェア（Unity\footnote{Unity Technology Inc.が開発したゲームエンジン及びゲームの統合開発環境．2005年に配信され，ポケモンGO（任天堂）やFall Guys（Mediatonic）といった様々なゲームの開発に用いられている．}）へ送信し，Unity上から視覚提示装置と触覚提示装置を動作させるシステムを用いる．
 
     \fig{myo_armband.pdf}{width=1\hsize}{Myo（Thalmic Labs社）}
-    \fig{MyoWare.pdf}{width=1\hsize}{MyoWare（Advancer Technologies社）}
-    まず，筋電計測装置として，ジェスチャと力みによる操作を比較するためにMyo（\figref{myo_armband.pdf}）\cite{thalmiclabs}とMyoWare（\figref{MyoWare.pdf}）\cite{advancertechnologies}の2つを用意する．MyoはThalmic Labs社が開発した，筋電センサを搭載したマルチジェスチャバンドであり，上腕部の筋肉位から，腕・手首・指の動きのジェスチャを識別することが可能な乾式筋電センサである．MyoWareはAdvancer Technologies社が提供する湿式筋電センサであり，Myoと異なり任意の筋肉の筋電位を計測することができ，Arduino等の外部接続したマイコンで簡単に筋電位を読み取ることが可能である．
+    \fig{MyoWare.pdf}{width=1\hsize}{MyoWare（Advancer Technologies LLC）}
+    まず，筋電計測装置として，ジェスチャと力みによる操作を比較するためにMyo（\figref{myo_armband.pdf}）\cite{thalmiclabs}とMyoWare（\figref{MyoWare.pdf}）\cite{advancertechnologies}の2つを用意する．MyoはThalmic Labsが開発した，筋電センサを搭載したマルチジェスチャバンドであり，上腕部の筋肉位から，腕・手首・指の動きのジェスチャを識別することが可能な乾式筋電センサである．MyoWareはAdvancer Technologiesが提供する湿式筋電センサであり，Myoと異なり任意の筋肉の筋電位を計測することができ，Arduino等の外部接続したマイコンで簡単に筋電位を読み取ることが可能である．
 
-    \fig{EMG_device_HV-F122.pdf}{width=1\hsize}{HV-F122（Omron社）}
+    \fig{EMG_device_HV-F122.pdf}{width=1\hsize}{HV-F122（OMRON Corporation）}
     次に，ヒトから仮想翼への情報伝達の触覚提示については，振動での提示機器とEMSを用いた電気刺激での提示機器を用意する．それぞれ，振動での触覚提示はMyoの振動機能，電気刺激での触覚提示は低周波治療器Omron HV-F122（\figref{EMG_device_HV-F122.pdf}）\cite{Omron-HV-F122}を用いる．
 
-    そして視覚提示装置として，
+    \fig{hmd-oculus_quest.jpg}{width=1\hsize}{Meta Quest（Meta Platforms Inc.）}
+    \fig{virtualwingborn.png}{width=1\hsize}{Virtual Wings（right side）}
+    そして視覚提示装置は，液晶モニターでの視覚提示とHMDを用いた視覚提示の2種類を用紙する．液晶モニターはhogehoge，HMDはMeta社のMeta Quest（\figref{hmd-oculus_quest.jpg}）\cite{OculusQuest}を使用する．視覚提示する際に使用する仮想翼を\figref{virtualwingborn.png}に示す．
+    % 液晶の型番を記入
 
 
 \section{操作/提示方法の検討}
     \subsection{翼の操作方法の比較}
         まず，翼の操作方法について比較する．第3章で述べたように，本研究ではヒトから翼への情報伝達として筋電位を用いる．筋電位を用いた操作方法は，関節動作を伴う動きである「ジェスチャ」と関節動作を伴わない「力み」による操作に分類することが出来る．
+
+        触覚と視覚提示の条件を固定し，ジェスチャと力みによる操作を比較する． 触覚はMyoを用いた振動を前腕に提示，視覚は\figref{virtualwingborn.png}のような仮想翼の3人称視点を液晶ディスプレイに描画し提示する．
     
 
     実験ごとに環境が変わっているから，その都度書くか
@@ -43,7 +48,7 @@
 
     %実験器具
     
-    \fig{virtualwingborn.png}{width=1\hsize}{Virtual Wings model version 1}
+    
 
     %実験の様子
     \fig{Manipulation_of_VirtualWings_using_Myo.pdf}{width=1\hsize}{Manipulation of virtual wings skeleton using Myo}
@@ -86,7 +91,7 @@
     %実験の様子
     \fig{Movement_of_VirtualWingsV2.pdf}{width=1\hsize}{Virtual presentation of Virtual wings}
 
-    力覚提示としてEMS機器を用いた実験では，筋電計測装置としてMyoWare（\figref{MyoWare.pdf}(a), AdvanceerTechnologies社），EMS機器として低周波治療器HV-F122（\figref{EMG_device_HV-F122.pdf}(b), Omron社）を使用した．視覚提示する仮想翼としては\figref{VirtualWingsV2.pdf}(c)のモデルを\figref{Movement_of_VirtualWingsV2.pdf}のように1人称視点して提示した．
+    力覚提示としてEMS機器を用いた実験では，筋電計測装置としてMyoWare（\figref{MyoWare.pdf}(a), AdvanceerTechnologies LLC），EMS機器として低周波治療器HV-F122（\figref{EMG_device_HV-F122.pdf}(b), OMRON Corporation）を使用した．視覚提示する仮想翼としては\figref{VirtualWingsV2.pdf}(c)のモデルを\figref{Movement_of_VirtualWingsV2.pdf}のように1人称視点して提示した．
 
     また実験の際，筋電計測位置を腕と胸，腹，力覚の提示位置を腕，腹，背中の複数個所を別々に計8通り行い，位置ごとの没入感の違いについて確認した．
 
