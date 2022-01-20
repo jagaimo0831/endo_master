@@ -21,24 +21,85 @@
 
     \fig{hmd-oculus_quest.jpg}{width=1\hsize}{Meta Quest（Meta Platforms Inc.）}
     \fig{virtualwingborn.png}{width=1\hsize}{Virtual Wings skeleton on one side}
-    そして視覚提示装置は，液晶モニターでの視覚提示とHMDを用いた視覚提示の2種類を用紙する．液晶モニターはhogehoge，HMDはMeta社のMeta Quest（\figref{hmd-oculus_quest.jpg}）\cite{OculusQuest}を使用する．視覚提示する際に使用する仮想翼を\figref{virtualwingborn.png}に示す．
-    % 液晶の型番を記入
-
+    そして視覚提示装置は，液晶モニターでの視覚提示とHMDを用いた視覚提示の2種類を用紙する．液晶モニターはGW2765HT（BenQ），HMDはMeta社のMeta Quest（\figref{hmd-oculus_quest.jpg}）\cite{OculusQuest}を使用する．視覚提示する際に使用する仮想翼を\figref{virtualwingborn.png}に示す．
 
 \section{操作/提示方法の検討}
     \subsection{翼の操作方法の比較}
-        まず，翼の操作方法について比較する．第3章で述べたように，本研究ではヒトから翼への情報伝達として筋電位を用いる．筋電位を用いた操作方法は，関節動作を伴う動きである「ジェスチャ」と関節動作を伴わない「力み」による操作に分類することが出来る．
+        まず，翼の操作方法について比較し，主観評価を行う．第3章で述べたように，本研究ではヒトから翼への情報伝達として筋電位を用いる．筋電位を用いた操作方法は，関節動作を伴う動きである「ジェスチャ」と関節動作を伴わない「力み」による操作に分類することが出来る．
 
         触覚と視覚提示の条件を固定し，ジェスチャと力みによる操作を比較する． 触覚はMyoを用いた振動を前腕に提示，視覚は仮想翼の3人称視点を液晶ディスプレイに描画し提示する．
 
         \fig{Manipulation_of_VirtualWings_using_Myo.pdf}{width=1\hsize}{Manipulation of virtual wings skeleton using Myo}
         \fig{Manipulation_of_VirtualWings_using_MyoWare.pdf}{width=1\hsize}{Manipulation of virtual wings skeleton using MyoWare}
-        仮想翼の操作は，筋電計測装置としてMyo用いる場合は\figref{Manipulation_of_VirtualWings_using_Myo.pdf}のように，手首を内側に曲げると翼も内側に羽ばたき，手首を外側に開くと翼も外側へ開くように設計する．また，触覚提示は翼が内側に羽ばたく際に合わせてMyoが振動するように行う．MyoWareを用いる場合は，力むと翼が閉じ，弛緩すると翼が開くように設計する．振動は筋電計測装置としてMyoを用いる場合と同様に，翼が内側に羽ばたく際に振動提示を行う．
+        仮想翼の操作は，筋電計測装置としてMyo用いる場合は\figref{Manipulation_of_VirtualWings_using_Myo.pdf}のように，手首を内側に曲げると翼も内側に羽ばたき，手首を外側に開くと翼も外側へ開くように設計する．また，触覚提示は翼が内側に羽ばたく際に合わせて前腕に装着したMyoが振動するように行う．
+        
+        MyoWareを用いる場合は，力むと翼が閉じ，弛緩すると翼が開くように設計する．触覚提示はMyoで筋電計測する場合と同様に，腕に装着したMyoを翼が内側に羽ばたく際に振動させることで提示を行う．また，MyoWareは計測部位として，力み動作が容易な上腕・胸・肩を選択する．
+
+        検証の結果，VRアプリケーションにおいて一般的なジェスチャを用いた操作だけでなく，上腕・胸・肩を問わず力みを用いた仮想翼の操作も問題なく意図通りに動作可能であることを確認した．
+
+    \subsection{触覚提示方法の比較}
+        次に，触覚提示方法について比較し，主観評価を行う．第3章で述べたように本研究では，触覚として振動を用いた触覚提示と電気刺激を用いた触覚提示の2つを準備する．
+
+        翼の操作方法と視覚提示の条件を固定し，触覚として振動を用いた提示と電気刺激を用いた提示を比較する．翼の操作方法は上腕・胸・肩の力み，視覚提示は液晶ディスプレイに翼の動きを描画して提示を行う．
+
+        \tabref{exp1_result}，\tabref{exp2_result}に，触覚提示として振動と電気刺激を行った際の，実験中の仮想翼からヒトへの情報の主観評価を示す．
+        
+        % 実験の結果
+        \begin{table}[tb]
+            \tablabel{exp1_result}
+            \begin{center}
+                \caption{Results of an experiment using vibration as a haptics presentation\\}
+                
+                \begin{tabular}{l|c|c|c}
+                    \hline
+                    Position(Sensing/Haptics) & Arm/Arm & Chest/Arm & Shoulder/Arm\\
+                    \hline
+                    Sense of having wings & 1 & 1 & 2 \\
+                    Sense of meneuvering the wings & 4 & 4 & 4 \\
+                    Sense of flying with wings & 1 & 2 & 2 \\
+                    Sense of air resistance & 4 & 4 & 4 \\
+                    \hline
+                \end{tabular}                
+            \end{center}
+        \end{table}
+        
+        \begin{table}[t]
+            \tablabel{exp2_result}
+            \begin{center}
+                \caption{Results of experiments using EMS as haptics presentation}
+                \begin{tabular}{l|c|c|c}
+                    \hline
+                    % 筋電取得位置（腕）
+                    Position(Sensing/Haptics) & Arm/Arm & Arm/Abs & Arm/Back \\\hline
+                    Sense of having wings & 1 & 3 & 5 \\
+                    Sense of meneuvering the wings & 3 & 3 & 3\\
+                    Sense of flying with wings & 3 & 3 & 4 \\
+                    Sense of air resistance & 3 & 4 & 4 \\\hline\hline
+    
+                    % 筋電取得位置（胸）
+                    Position(Sensing/Haptics) & Chest/Arm & Chest/Abs & Chest/Back \\\hline
+                    Sense of having wings & 2 & 3 & 5 \\
+                    Sense of meneuvering the wings & 3& 3 & 4\\
+                    Sense of flying with wings & 3 & 4 & 5 \\                        
+                    Sense of air resistance & 3 & 4 & 4 \\\hline\hline
+    
+                    % 筋電取得位置（腹）
+                    Position(Sensing/Haptics) & Shoulder/Arm & Shouler/Abs & Shoulder/Back  \\\hline                        
+                    Sense of having wings & 2 & 3 & 5 \\                        
+                    Sense of meneuvering the wings & 4 & 4 & 5 \\
+                    Sense of flying with wings & 3 & 3 & 5 \\
+                    Sense of air resistance & 3 & 4 & 4\\\hline\hline
+                \end{tabular}
+            \end{center}
+        \end{table}
+
+    \subsection{視覚提示方法の比較}
+        最後に，視覚提示方法について比較し，主観評価を行う．視覚提示装置として，液晶ディスプレイとHMDを用意する．
+
+        翼の操作方法と触覚提示の条件を固定し，視覚提示装置として液晶ディスプレイとHMDを比較する．翼の操作方法は上腕・胸・肩の力み，触覚提示は前腕・胸・腹・背中にEMS機器による電気刺激を行う．
+        % 未
 
     
-    \subsection{触覚提示方法の比較}
-    \subsection{視覚提示方法の比較}
-
 \section{操作/提示位置の検討}
     \subsection{操作位置の比較}
     \subsection{提示位置の比較}
@@ -56,26 +117,7 @@
 
     
 
-    \tabref{exp1_result}に，実験中の没入感に関する各項目に対する主観評価を示す．
-        % 実験の結果
-        \begin{table}[tb]
-            \tablabel{exp1_result}
-            \begin{center}
-                \caption{Results of an experiment using vibration as a force sense presentation\\}
-                
-                \begin{tabular}{l|c}
-                    
-                    \hline
-                    Position(EMG/Vibration) & Arm/Arm \\
-                    \hline
-                    Sense of having wings & 1 \\
-                    Sense of meneuvering the wings & 4 \\
-                    Sense of flying with wings & 1 \\
-                    Sense of air resistance & 4 \\
-                    \hline
-                \end{tabular}                
-            \end{center}
-        \end{table}
+    
 
 
     
@@ -100,35 +142,7 @@
 
     \tabref{exp2_result}に，実験中の没入感に関する各項目に対する主観評価を示す．
     
-    \begin{table}[t]
-        \tablabel{exp2_result}
-        \begin{center}
-            \caption{Results of experiments using EMS as force sense presentation}
-            \begin{tabular}{l|c|c|c}
-                \hline
-                % 筋電取得位置（腕）
-                Position(EMG/EMS) & Arm/Arm & Arm/Abs & Arm/Back \\\hline
-                Sense of having wings & 1 & 3 & 5 \\
-                Sense of meneuvering the wings & 3 & 3 & 3\\
-                Sense of flying with wings & 3 & 3 & 4 \\
-                Sense of air resistance & 3 & 4 & 4 \\\hline\hline
-
-                % 筋電取得位置（胸）
-                Position(EMG/EMS) & Chest/Arm & Chest/Abs & Chest/Back \\\hline
-                Sense of having wings & 2 & 3 & 5 \\
-                Sense of meneuvering the wings & 3& 3 & 4\\
-                Sense of flying with wings & 3 & 4 & 5 \\                        
-                Sense of air resistance & 3 & 4 & 4 \\\hline\hline
-
-                % 筋電取得位置（腹）
-                Position(EMG/EMS) & Abs/Arm & & Abs/Back  \\\hline                        
-                Sense of having wings & 2 && 5 \\                        
-                Sense of meneuvering the wings & 4 && 5 \\
-                Sense of flying with wings & 3 && 5 \\
-                Sense of air resistance & 3 && 4\\\hline\hline
-            \end{tabular}
-        \end{center}
-    \end{table}
+    
     
 
     \tabref{exp2_result}より，力覚の提示位置が背中に近づくほど没入感に関する評価が高くなっている．
