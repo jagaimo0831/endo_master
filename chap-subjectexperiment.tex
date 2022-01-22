@@ -19,21 +19,77 @@
         % 被験者実験の様子（予定）の図があるともっとわかりやすいかも
 
 \section{実験環境}
+        % システムと装置の説明
+
         \fig{subjectexp-system.png}{width=1\hsize}{（後で差し替え）Subjective expetiment system}
         % Arduinoの存在をPC/Unityの項目に組み込む
 
         \fig{subjectexp-env.png}{width=1\hsize}{（写真だとわかりずらいので抽象的な図とか）Subjectexperiment environment}
 
         \fig{hmd-vive_pro_eye.jpg}{width=1\hsize}{HTC VIVE PRO EYE\cite{htc-vive}}
+        \fig{VirtualWingsV2.pdf}{width=1\hsize}{Virtual Wings model version 2}
+
         \fig{subjectexp-haptic_dev_motor.png}{width=1\hsize}{（回路図か何かを併記すると見やすい）Haptics display（vibration）}
         \fig{subjectexp-haptic_dev_ems.png}{width=1\hsize}{（回路図か何かを併記すると見やすい）Haptics display（EMS）}
-        \fig{subjectexp-human_model.png}{width=1\hsieze}{Human model}
+        
 
         被験者実験を行う実験環境について述べる．被験者実験では，第4章の主観評価実験と同様に\figref{subjectexp-system.png}のような環境のシステムで実験を行う．
 
         筋電計測装置にはMyoWare（\figref{MyoWare.pdf}）を使用し，Arduinoを用いて筋電位の値を取得する．
         取得した筋電位の値をPC上のソフトウェア（Unity）へ送る．そして，Unityから視覚提示装置と触覚提示装置を制御する．
-        視覚提示装置にはVIVE PRO EYE（HTC社）\figref{hmd-vive_pro_eye.jpg}を用いる．触覚提示装置は，\figref{subjectexp-haptic_dev_motor.png}と\figref{subjectexp-haptic_dev_ems.png}を用いる．\figref{subjectexp-haptic_dev_motor.png}は，偏心モータをArduinoからPWMで制御し振動を与える装置である．\figref{subjectexp-haptic_dev_motor.png}は，低周波治療器（Omron HV-F127\cite{Omron-HV-F127}）をArduinoで制御し，電気刺激を与える装置である．
+        視覚提示装置にはVIVE PRO EYE（HTC社）\figref{hmd-vive_pro_eye.jpg}を用いる．VIVE PRO EYEを用いて，仮想翼（\figref{VirtualWingsV2.pdf}）が生えている様子を，1人称視点で提示する．
+        触覚提示装置は，\figref{subjectexp-haptic_dev_motor.png}と\figref{subjectexp-haptic_dev_ems.png}を用いる．\figref{subjectexp-haptic_dev_motor.png}は，偏心モータをArduinoからPWMで制御し振動を与える装置である．\figref{subjectexp-haptic_dev_motor.png}は，低周波治療器（Omron HV-F127\cite{Omron-HV-F127}）をArduinoで制御し，電気刺激を与える装置である．
+        % （修正）触覚提示装置に関してもう少し詳しく書いた方が良い（Ex. 通信方式（シリアル），データの処理...）
+
+        % 操縦方法について（物理環境→操作方法→提示）
+        実験の物理環境について述べる．
+        本実験でのVR空間では，飛行を行いやすくするために重力加速度$g^{\prime}$を月と同等（\equref{gravity}）に設定する．
+        \begin{eqnarray}
+                \equlabel{gravity}
+                g^{\prime}=1.62\;[m/s^{2}]
+        \end{eqnarray}
+
+        また，飛行の際に\equref{air_resistance}のような，速度に比例した空気抵抗$R\;[N]$を与える．
+        \begin{eqnarray}
+                \equlabel{air_resistance}
+                \bm{R}=k\bm{v} \;[N]
+        \end{eqnarray}
+        $k$は比例定数（$k=500$）．
+        % 進行方向，上昇方向どちらも比例定数は等しい
+
+        VR空間内での具体的な飛行方法について述べる．
+        まず，翼の操作方法は，操作位置（筋電計測位置）を力ませている間は仮想翼が内側に羽ばたき，弛緩させると仮想翼を広げる用に設計する．仮想翼が操作位置を力ませ仮想翼を羽ばたかせることにより，進行・上昇方向へ力が発生し飛行することができる．この際発生する力$F\;[N]$は\equref{force}に従う．
+        % この式についてのrefをしっかりする（空機抵抗の終端速度の式を参考にしたが，もっと理屈的に説明できるように）
+        \begin{eqnarray}
+                \equlabel{force}
+                \bm{F}=\frac{a}{\bm{l}}  \tanh\left(\,\frac{x}{a}\,\right) \;[N]
+        \end{eqnarray}
+        \begin{eqnarray}
+                \equlabel{force_prop}
+                \bm{l}=\begin{pmatrix}400 \\ 500 \end{pmatrix}
+        \end{eqnarray}
+        $l$はそれぞれ1行目が進行方向，2行目が上昇方向の比例定数．$a\;[N]$と$x\;[N]$はそれぞれ，筋電位の最大値と計測された筋電位である．
+
+        また，仮想翼を内側に羽ばたかせた際に，触覚提示を行う．この時の触覚提示の強さは計測された筋電位に応じて変化するようにする．ウェーバー・フェヒナーの法則\cite{10011340169}より，人間の感覚の大きさは受ける刺激の強さの対数に比例することが知られている．
+        \begin{eqnarray}
+                \equlabel{weber_fechner}
+                P = k \log{e}\frac{I}{I_{0}}
+        \end{eqnarray}
+        $P:\;$感覚の強さ（Perception），$I:\;$刺激の強さ（Intensity of stimulation），$I_{0}:\;$感覚の強さが0になる刺激の強さ，$k:\;$刺激固有の定数．
+
+        従って，触覚提示の強さを対数に比例するように\equref{haptics}に従うようにする．
+        
+        \begin{eqnarray}
+                \equlabel{haptics}
+                hoge=hoge
+        \end{eqnarray}
+        
+
+        
+
+
+
+        
 
         システム構成，ハードウェア，ソフトウェア，操作方法
 
@@ -77,7 +133,7 @@
         MyoとUnity通信\\    
         myowareとUnity通信\\
 
-        \fig{VirtualWingsV2.pdf}{width=1\hsize}{Virtual Wings model version 2}
+        \fig{subjectexp-human_model.png}{width=1\hsize}{Human model}
         \fig{Movement_of_VirtualWingsV2.pdf}{width=1\hsize}{Virtual presentation of Virtual wings}
 
 
