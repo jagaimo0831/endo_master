@@ -19,12 +19,23 @@
         % 被験者実験の様子（予定）の図があるともっとわかりやすいかも
 
 \section{実験環境}
-        \fig{subjectexp-env.jpg}{width=1\hsize}{subjectexperiment Environment}
-        \fig{subjectexp-haptic_dev_motor}{width=1\hsize}{Haptics display（vibration）}
-        \fig{subjectexp-haptic_dev_ems}{width=1\hsize}{Haptics display（EMS）}
+        \fig{subjectexp-system.png}{width=1\hsize}{（後で差し替え）Subjective expetiment system}
+        % Arduinoの存在をPC/Unityの項目に組み込む
 
-        被験者実験を行う実験環境について述べる．
-        システム構成，ハードウェア，ソフトウェア
+        \fig{subjectexp-env.png}{width=1\hsize}{（写真だとわかりずらいので抽象的な図とか）Subjectexperiment environment}
+
+        \fig{hmd-vive_pro_eye.jpg}{width=1\hsize}{HTC VIVE PRO EYE\cite{htc-vive}}
+        \fig{subjectexp-haptic_dev_motor.png}{width=1\hsize}{（回路図か何かを併記すると見やすい）Haptics display（vibration）}
+        \fig{subjectexp-haptic_dev_ems.png}{width=1\hsize}{（回路図か何かを併記すると見やすい）Haptics display（EMS）}
+        \fig{subjectexp-human_model.png}{width=1\hsieze}{Human model}
+
+        被験者実験を行う実験環境について述べる．被験者実験では，第4章の主観評価実験と同様に\figref{subjectexp-system.png}のような環境のシステムで実験を行う．
+
+        筋電計測装置にはMyoWare（\figref{MyoWare.pdf}）を使用し，Arduinoを用いて筋電位の値を取得する．
+        取得した筋電位の値をPC上のソフトウェア（Unity）へ送る．そして，Unityから視覚提示装置と触覚提示装置を制御する．
+        視覚提示装置にはVIVE PRO EYE（HTC社）\figref{hmd-vive_pro_eye.jpg}を用いる．触覚提示装置は，\figref{subjectexp-haptic_dev_motor.png}と\figref{subjectexp-haptic_dev_ems.png}を用いる．\figref{subjectexp-haptic_dev_motor.png}は，偏心モータをArduinoからPWMで制御し振動を与える装置である．\figref{subjectexp-haptic_dev_motor.png}は，低周波治療器（Omron HV-F127\cite{Omron-HV-F127}）をArduinoで制御し，電気刺激を与える装置である．
+
+        システム構成，ハードウェア，ソフトウェア，操作方法
 
 \section{実験方法}
         実験の順番，アンケートの内容（リッカート尺度，t検定）

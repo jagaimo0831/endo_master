@@ -12,6 +12,8 @@
 
     主観評価実験を行う実験環境について述べる．本章では，\figref{Experiment_equipment_system_eng.pdf}のような，筋電計測装置で計測した値を，端末上のソフトウェア（Unity\footnote{Unity Technology Inc.が開発したゲームエンジン及びゲームの統合開発環境．2005年に配信され，ポケモンGO（任天堂）やFall Guys（Mediatonic）といった様々なゲームの開発に用いられている．}）へ送信し，Unity上から視覚提示装置と触覚提示装置を動作させるシステムを用いる．
 
+    % Unityについて調べて追記しても良いかも（自分用）
+
     \fig{myo_armband.pdf}{width=1\hsize}{Myo（Thalmic Labs社）}
     \fig{MyoWare.pdf}{width=1\hsize}{MyoWare（Advancer Technologies LLC）}
     まず，筋電計測装置として，ジェスチャと力みによる操作を比較するためにMyo（\figref{myo_armband.pdf}）\cite{thalmiclabs}とMyoWare（\figref{MyoWare.pdf}）\cite{advancertechnologies}の2つを用意する．MyoはThalmic Labsが開発した，筋電センサを搭載したマルチジェスチャバンドであり，上腕部の筋肉位から，腕・手首・指の動きのジェスチャを識別することが可能な乾式筋電センサである．MyoWareはAdvancer Technologiesが提供する湿式筋電センサであり，Myoと異なり任意の筋肉の筋電位を計測することができ，Arduino等の外部接続したマイコンで簡単に筋電位を読み取ることが可能である．
@@ -43,7 +45,8 @@
         翼の操作方法と視覚提示の条件を固定し，触覚として振動を用いた提示と電気刺激を用いた提示を比較する．翼の操作方法は上腕・胸・肩の力みにより翼が閉じ，弛緩すると翼が開くように設計する．視覚提示は液晶ディスプレイに3人称視点での翼の動きを描画して提示を行う．
 
         \tabref{exp1_result}，\tabref{exp2_result}に，触覚提示として振動と電気刺激を行った際の，実験中の仮想翼からヒトへの情報の5段階の主観評価を示す．
-        
+
+        % （修正）ここら辺の結果をエクセルでグラフにすると，もっと視覚的に見やすい
         % 実験の結果
         \begin{table}[tb]
             \tablabel{exp1_result}
