@@ -21,8 +21,7 @@
 \section{実験環境}
         % システムと装置の説明
 
-        \fig{subjectexp-system.png}{width=1\hsize}{（後で差し替え）Subjective expetiment system}
-        % Arduinoの存在をPC/Unityの項目に組み込む
+        \fig{Experiment_equipment_system_eng.pdf}{width=1\hsize}{Experiment equipment system}
 
         \fig{subjectexp-env.png}{width=1\hsize}{（写真だとわかりずらいので抽象的な図とか）Subjectexperiment environment}
 
@@ -131,13 +130,45 @@
 
 
 \section{結果と考察}
+        % 視覚的な結果
         \fig{subjectexp-result_haptics_pos.png}{width=1\hsize}{（仮）Haptics pos}
         \fig{subjectexp-result_emg_pos.png}{width=1\hsize}{（仮）EMG pos}
         \fig{subjectexp-result_vib_or_ems.png}{width=1\hsize}{（仮）vib or ems}
         \fig{subjectexp-result_mesure_or_presen.png}{width=1\hsize}{（仮）mesure or presen}
 
-        結果（グラフ），考察，課題
+        % 数値的な結果
+        % \begin{table}[tb]
+        %         \tablabel{subexp-bodyimage_expansion}
+        %         \begin{center}
+        %           \caption{Results of subject experiment}
+        %           \begin{tabular}{l|c|c|c|c}
+        %                 \hline
+        %                 Questionnaire & Evaluated value \\
+        %                 \hline
+        %                 Haptic presentation position(Vibration) & Chest & Abs & Waist & Back\\
+
+
+        %                 Average of Evaluated Value [-] & 7.4\\
+        %                 \hline
+        %                 \\
+        %                 \hline
+        %           \end{tabular}
+        %         \end{center}
+        %       \end{table}
+
+        \figref{subjectexp-result_haptics_pos.png}，\figref{subjectexp-result_emg_pos.png}，\figref{subjectexp-result_vib_or_ems.png}，\figref{subjectexp-result_mesure_or_presen.png}に被験者実験のアンケート結果を示す．
+
+        \figref{subjectexp-result_haptics_pos.png}より，触覚提示位置を比較したとこと，提示機器が振動・電気刺激に関わらず背中，腰，胸，腹の順番に評価が高いことが分かる．これより触覚の提示位置は，視覚提示で与えた仮想翼の位置からの絶対的な距離よりも，胴体の前面・後面が身体像拡張の評価に影響することがわかる．
+
+        また，筋電計測位置の比較したところ，\figref{subjectexp-result_emg_pos.png}のように，提示機器が振動・電気刺激に関わらず，肩による仮想翼の操作の評価が一番高いことが確認できる．筋肉の位置が近い，腕（動的筋収縮）と胸（静的筋収縮）の評価には大きな違いが見られない．これより身体像拡張において，ジェスチャ（動的筋収縮）による操作と関節動作を伴わない力み（静的筋収縮）による操作によって惹起される感覚に大きな違いが生じないと考えられる．また，腕が直感的なジェスチャであるのに対し，胸の力みは普段行わない動作かつ行いにくい動作であるのにもかかわらず同様な評価となっている．これより，胸による操作の訓練を行うことで，力みによる操作がジェスチャによる操作よりも仮想翼の身体像拡張において有効になることが期待できる．
+
+        振動と電気刺激の触覚提示の比較を\figref{subjectexp-result_vib_or_ems.png}に示す．7人の被験者が触覚提示として振動を用いた方が良いと感じ，残りの8人の電気刺激を用いた方が良いと回答した．これより，触覚提示として一般的な振動に加え，電気刺激を用いた提示方法も有用であることが分かる．また，\figref{subjectexp-result_emg_pos.png}\figref{subjectexp-result_haptics_pos.png}より，全体的にEMSを用いた提示の方が評価が高いことが分かる．これは，振動を用いた触覚提示が皮膚表面（表在感覚）に対しての刺激であるのに対し，電気刺激を用いた触覚提示は皮膚表面に加えて筋肉（深部感覚）へも刺激が伝わり，感覚のモードが増えたことが考えられる．
+
+        身体像拡張において，計測位置と触覚提示位置のどちらが重要であるかと感じたか，という質問では振動・電気刺激問わず計測位置を選択した被験者が多いことが分かる（\figref{subjectexp-result_mesure_or_presen.png}）．慣れない力みでの仮想翼の操作にも関わらず測定位置の方が重視されていることより，力み動作を訓練することでより強く仮想翼の身体像拡張が行えることが期待できる．
+
+        最後に，背中から生えた翼で羽ばたいて飛ぶ感覚を感じることが出来たかという項目には，平均で7.11の評価を得ることができた．従って，本研究で提案した手法での仮想翼の身体像拡張が可能であることが分かった．
+
 
 \section{おわりに}
-        本章では，主観評価実験を踏まえた位置による身体像拡張の差異を評価する被験者実験を行った．筋電計測位置と羽ばたく感覚の提示位置を変化させた場合の，羽ばたいて飛ぶ感覚の感じ方の違いについて検証を行った．
+        本章では，主観評価実験を踏まえた位置による身体像拡張の差異を評価する被験者実験を行った．筋電計測位置と羽ばたく感覚の提示位置を変化させた場合の，羽ばたいて飛ぶ感覚の感じ方の違いについて検証を行った．そして，触覚提示位置が，絶対的な距離よりも胴体の前面・後面の要素が重要となることが分かった．また，筋電計測位置について，ジェスチャに加え力みによる操作も有効であること，訓練次第でジェスチャよりも力みによる操作の方が評価が高くなる可能性があることを示した．そして，触覚として電気刺激を用いた提示の方が全体的に評価が高くなることが分かった．そして，本研究で提案した手法での仮想翼の身体像拡張が可能であることが分かった．
 
