@@ -142,6 +142,493 @@
     % 仮想
     翼からヒトへは，翼が生えている様子・翼を動かして飛んでいる様子・翼へ作用する空気抵抗の感覚を伝え，複数感覚の統合を試みる．上記より，四肢から独立した翼で羽ばたいて飛ぶ感覚を提示する．
 
+
+\section{四肢から独立した翼の提示方法}
+  % 本章では，四肢から独立した翼の提示方法について述べる．前章の身体像の拡張では，身体像についての概要と身体像拡張の原理と方法について述べた．本章では，前章の内容を踏まえた四肢から独立した翼の提示方法を提案する．
+
+
+  \subsection{身体像拡張を行う方法}
+    \fig{method-Method_of_body_image_expansion.pdf}{width=1\hsize}{Method of body expansion}
+    身体像の拡張には情報の双方向性が重要であることを踏まえ，本研究では\figref{method-Method_of_body_image_expansion.pdf}のような形で身体像の拡張を行う．ヒトから仮想翼へは，翼を動かす指令を与える．仮想翼からヒトへは，翼が生えている様子（自己所有感），翼を動かして飛んでいる様子（自己主体感），翼へ作用する空気抵抗の感覚（外力）を伝える．上記より，四肢から独立した翼で羽ばたいて飛ぶ感覚を提示する．
+
+  \subsection{ヒトから仮想翼への情報伝達}
+    まず，ヒトから仮想翼へ翼を動かす指令を与える方法について述べる．
+
+    VR空間でのヒトからシステムへの情報提示方法として，コントローラやジェスチャによる操作や，生体信号を用いることが挙げられる．
+    本研究では，四肢以外で翼を操作することを目的としているため，主に手を用いるコントローラや，手足の動きが必要となるジェスチャではなく，四肢の動きが伴わずに計測が可能な生体信号を用いる．また，生体信号の中でも数値の取得が容易な筋電位によって仮想翼を操作する．
+
+    \subsubsection{筋電の計測}
+      筋電位とは，筋肉が収縮する際に発する微弱な活動電位の事を指す．筋電センサは，筋肉の発する微弱な信号を増幅し計測を行う機器である\cite{alts-myography}．筋電センサには，乾式タイプと湿式タイプが存在し，それぞれの以下の特徴を持つ．本章では乾式と湿式どちらも使用する．
+      % 筋肉の動作メカニズムも乗っけておくと良い
+      % 乾式湿式の前に，侵襲or非侵襲の違いがある...
+
+      \begin{itemize}
+      \item 乾式筋電センサ
+          \begin{itemize}
+          \item 金属製の電極を皮膚へ接触させて計測を行う
+          \item 電極を交換する必要が無い
+          \item 激しい動きで，電極がズレてノイズが生じる可能性がある
+          \item 汗の影響を受けやすい
+          \item Ex. MYO（Thalmic Labs）
+          \end{itemize}
+
+      \item 湿式筋電センサ
+          \begin{itemize}
+          \item ジェル状の電極を皮膚へ貼り付けて計測を行う
+          \item 電極が使い捨てなため，費用がかかる
+          \item 皮膚との密着性が高く，信号にノイズが生じにくい
+          \item Ex. MyoWare（Advancer Technologies）
+          \end{itemize}
+      \end{itemize}
+
+
+  \subsection{仮想翼からヒトへの情報伝達}
+    次に，仮想翼からヒトへ情報を与える方法について述べる．
+
+    ヒトへ働きかける感覚として
+    % ナイーブな表現だが
+    五感が挙げられる．
+    その中でも，身体像の拡張におけるヒトへ働きかける情報として，視覚と触覚
+    % ，聴覚
+    が用いられることが多い．
+    これは，身体像拡張において視触覚の統合が有効であることを示す．
+    % 聴覚に関しては空間的定位，ここでは翼のある場所を認識する場合において，一般的に視覚よりも情報としての重要度が低く\cite{岡嶋克典20182}，提示する情報としての優先度が低かったので今回は用いない．    
+    % 以上を踏まえて本研究では，五感の中でも視覚と触覚を用いて仮想翼からの情報を提示する．
+    本研究でも，視覚と触覚を用いて仮想翼からの情報を提示する．
+
+    \subsubsection{視覚の提示}
+      \fig{hmd_vection.png}{width=1\hsize}{Presentation of visual information by using the virtual environment}
+      
+      視覚を用いた提示は，\figref{hmd_vection.png}のようにUnityで作成した映像を
+      % HMDに
+      視覚ディスプレイに出力することで行う．
+      % HMDに
+      出力される映像は，空中を移動している様子と，背中からはえた翼の一部が見える様子を提示する．
+
+      空中を移動している様子の提示について述べる．
+      空中を移動する様子の提示として，ベクション（自己誘導性自己運動感覚）と呼ばれる錯覚を用いる．ベクションとは，視野の大部分に一様な運動刺激を提示すると刺激の運動方向と反対の方向に体が動いているように感じる錯覚である\cite{妹尾武治2014ベクションとその周辺の近年の動向}．例として，停車中の電車から動き出す他の電車の視覚情報を受け取ると，観測者側の電車が動いているように感じる現象が挙げられる．
+      % 浮遊感に関する研究で，ベクションは多く活用されている．例としてベクションによる落下感覚を分析した研究がある\cite{奥川夏輝2017VR空間における視覚刺激によって発生する落下感覚の分析}．このようにVRを用いた飛行体験においてベクションは有用である．
+
+      背中から翼が生えている様子・翼を動かして飛んでいる様子は，後ろを振り返ると使用者の背中から翼が生えている様子を描画されるようにする．また，翼を羽ばたかせる際に，視界に翼を広げたり閉じたりする様子の描画を行う．以上より，背中から翼が生え羽ばたく様子を提示する．
+
+
+
+    \subsubsection{触覚の提示}
+    
+      触覚を用いた提示は，
+      % \figref{How2present_force_applied2wings_eng.pdf}のように
+      翼の根元に触覚を提示することで，翼が生えている様子・翼を動かして飛んでいる様子・翼に作用する空気抵抗の感覚を提示する．
+      これは，ある1つの領域への触覚提示による身体像拡張を促すものあり，道具の身体化の手で所持した棒の先端まで身体像が拡張される事象と同様な例である．
+      % 上は，身体像拡張（道具拡張，リマップの2種分類）の内，道具拡張の方を採用したよ！ということを述べたい文章．
+      
+      また本研究では，触覚ディスプレイとして振動を用いた触覚提示と電気刺激を用いた触覚提示の2つを準備する．
+      
+      振動を用いた触覚提示は，触覚提示として一般的な
+      % 偏心モータによる
+      振動を提示する．振動を用いた触覚提示の例として，ゲームのコントローラに振動機能を追加\cite{shim2020fs}，携帯電話やスマートフォンのバイブレーション機能などが挙げられる．
+
+      電気刺激を用いた触覚提示は，筋収縮により疑似的に触覚を提示する方法である．この方法はEMS（Electro Myo Stimulation: 神経筋電気刺激療法）と呼ばれる，筋肉や運動神経へ電気刺激を与えることで筋収縮を促し，運動効果を得ることで筋肉の増強や萎縮の予防等をする治療法を用いた方法である．EMSにより筋肉を収縮させることで，疑似的に触覚（重量の知覚）を提示する研究がある\cite{小川剛史2017電気的筋肉刺激が重量知覚に及ぼす影響の分析}．本研究では，EMS機器により筋収縮を起こすことで
+      % 疑似的に
+      触覚を生じさせ，仮想翼からの情報を提示する．
+
+
+\section{提案手法を用いた身体像拡張の主観評価実験}
+
+  \subsection{主観評価実験を行う実験環境}
+    \fig{experiment-Experiment_equipment_system.pdf}{width=1\hsize}{Experimental environment system}
+    % --図の修正--
+    % Virtual Wingsではなく，Visual display
+    % Force presentation dev -> Haptic display
+
+    主観評価実験を行う実験環境について述べる．本章では，\figref{experiment-Experiment_equipment_system.pdf}のような，筋電計測装置で計測した値を，端末上のソフトウェア（Unity\footnote{Unity Technology Inc.が開発したゲームエンジン及びゲームの統合開発環境．2005年に配信され，ポケモンGO（任天堂）やFall Guys（Mediatonic）といった様々なゲームの開発に用いられている．}）へ送信し，Unity上から視覚提示装置と触覚提示装置を動作させるシステムを用いる．
+
+    % Unityについて調べて追記しても良いかも（自分用）
+
+    \fig{myo_armband.pdf}{width=0.8\hsize}{Myo（Thalmic Labs）}
+    \fig{MyoWare.pdf}{width=0.7\hsize}{MyoWare（Advancer Technologies LLC）}
+    まず，筋電計測装置として，ジェスチャと力みによる操作を比較するためにMyo（\figref{myo_armband.pdf}）\cite{thalmiclabs}とMyoWare（\figref{MyoWare.pdf}）\cite{advancertechnologies}の2つを用意する．MyoはThalmic Labsが開発した，筋電センサを搭載したマルチジェスチャバンドであり，上腕部の筋肉位から，腕・手首・指の動きのジェスチャを識別することが可能な乾式筋電センサである．MyoWareはAdvancer Technologiesが提供する湿式筋電センサであり，Myoと異なり任意の筋肉の筋電位を計測することができ，Arduino等の外部接続したマイコンで簡単に筋電位を読み取ることが可能である．
+
+    \fig{EMG_device_HV-F122.pdf}{width=0.7\hsize}{HV-F122（Omron社）}
+    次に，
+    % ヒトから仮想翼への情報伝達の
+    触覚提示については，振動での提示機器とEMSを用いた電気刺激での提示機器を用意する．それぞれ，振動での触覚提示はMyoの振動機能，電気刺激での触覚提示は低周波治療器Omron HV-F122（\figref{EMG_device_HV-F122.pdf}）\cite{Omron-HV-F122}を用いる．
+
+    \fig{hmd-oculus_quest.jpg}{width=0.7\hsize}{Meta Quest（Meta Platforms Inc.）}
+    \fig{exprtiment-VirtualWings_skeleton.pdf}{width=0.7\hsize}{Virtual Wings skeleton}
+    そして，視覚提示装置は
+    3人称視点と1人称視点を比較するため，
+    液晶モニターでの視覚提示とHMDを用いた視覚提示の2種類を準備する．液晶モニターはGW2765HT（BenQ），HMDはMeta社のMeta Quest（\figref{hmd-oculus_quest.jpg}）\cite{OculusQuest}を使用する．視覚提示する際に使用する仮想翼を\figref{exprtiment-VirtualWings_skeleton.pdf}に示す．
+
+  \subsection{操作・提示方法の検討}
+    % \fig{experiment-comparison_of_method.png}{width=1\hsize}{（仮）comparison of method}
+
+    \begin{table}[tb]
+        \tablabel{comparison items}
+        \begin{center}
+            \caption{Comparison items}
+            \begin{tabular}{l|c|c|c}
+                \hline
+                Comparison item & Wings operation & Haptics display & Visual display\\
+                \hline
+                Wings operation & Gesture/Strengthen & Vibration & TPP \\
+                Haptics display & Strengthen & Vibration/EMS & TPP \\
+                Visual display & Strengthen & EMS & TPP/FPP \\
+                \hline
+            \end{tabular}                
+        \end{center}
+    \end{table}
+
+    \tabref{comparison items}に比較項目を示す（FPP...First Person Perspective, TPP...Third Person Perspective）．
+
+  % この図を活用してもっと分かり易く比較する
+
+   \subsubsection{翼の操作方法の比較}
+      まず，翼の操作方法について比較し，主観評価を行う．第3章で述べたように，本研究ではヒトから翼への情報伝達として筋電位を用いる．筋電位を用いた操作方法は，関節動作を伴う動きであるジェスチャ（動的筋収縮）と，関節動作を伴わない力み静的筋収縮\cite{thistle1967isokinetic}による操作に分類することが出来る．
+
+      触覚と視覚提示の条件を固定し，ジェスチャと力みによる操作を比較する． 触覚はMyoを用いた振動を前腕に提示，視覚は仮想翼の3人称視点を液晶ディスプレイ（\figref{Manipulation_of_VirtualWings_using_Myo.pdf}，\figref{Manipulation_of_VirtualWings_using_MyoWare.pdf}）に描画し提示する．
+
+      \fig{Manipulation_of_VirtualWings_using_Myo.pdf}{width=0.8\hsize}{Manipulation of virtual wings skeleton using Myo}
+      \fig{Manipulation_of_VirtualWings_using_MyoWare.pdf}{width=0.8\hsize}{Manipulation of virtual wings skeleton using MyoWare}
+      仮想翼の操作は，筋電計測装置としてMyo用いる場合（ジェスチャによる操作）は\figref{Manipulation_of_VirtualWings_using_Myo.pdf}のように，手首を内側に曲げると翼も内側に羽ばたき，手首を外側に開くと翼も外側へ開くように設計する．また，触覚提示は翼が内側に羽ばたく際に合わせて前腕に装着したMyoが振動するように行う．
+      
+      MyoWareを用いる場合（力みによる操作）は，力むと翼が閉じ，弛緩すると翼が開くように設計する．触覚提示はMyoで筋電計測する場合と同様に，腕に装着したMyoを翼が内側に羽ばたく際に振動させることで提示を行う．また，MyoWareは計測部位として，力み動作が容易な前腕・胸・肩を選択する．
+
+      検証の結果，VRアプリケーションの操作方法として一般的なジェスチャを用いた操作だけでなく，前腕・胸・肩を問わず力みを用いた仮想翼の操作も，操縦者の意図通りに動作させることが可能であることを確認した．
+      % また，筋電計測装置を用いたジェスチャの判定にはある程度の力みが必要となり，関節動作を伴わない筋収縮による仮想翼の操作と比べ，疲労感が多くなることが分かった．
+
+    \subsubsection{触覚提示方法の比較}
+      次に，触覚提示方法について比較し，主観評価を行う．
+      % 第3章で述べたように
+      本研究では，触覚として振動を用いた触覚提示と電気刺激を用いた触覚提示の2つを準備する．
+
+      翼の操作方法と視覚提示の条件を固定し，触覚として振動を用いた提示と電気刺激を用いた提示を比較する．翼の操作方法はMyoWareを用いて前腕・胸・肩の力みにより翼が閉じ，弛緩すると翼が開くようにする．視覚提示は液晶ディスプレイに3人称視点での翼の動き（\figref{Manipulation_of_VirtualWings_using_MyoWare.pdf}）を描画して提示を行う．
+
+      % \tabref{exp1_result}，\tabref{exp2_result}
+      図4.2と図4.3
+      に，触覚提示として振動と電気刺激を行った際の，実験中の仮想翼からヒトへの情報提示についてのリッカート尺度で5段階の主観評価を示す．
+
+      % （修正）ここら辺の結果をエクセルでグラフにすると，もっと視覚的に見やすい
+      % 実験の結果
+      \begin{table}[tb]
+          \tablabel{exp1_result}
+          \begin{center}
+              \caption{Results of an experiment using vibration as a haptics presentation}
+              \begin{tabular}{l|c|c|c}
+                  \hline
+                  Position(Sensing/Haptics) & Arm/Arm & Chest/Arm & Shoulder/Arm\\
+                  \hline
+                  Sense of having wings & 1 & 1 & 2 \\
+                  Sense of meneuvering the wings & 4 & 4 & 4 \\
+                  Sense of air resistance & 4 & 4 & 4 \\
+                  Sense of flying with wings & 1 & 2 & 2 \\
+                  \hline
+              \end{tabular}                
+          \end{center}
+      \end{table}
+      
+      \begin{table}[t]
+          \tablabel{exp2_result}
+          \begin{center}
+              \caption{Results of experiments using EMS as haptics presentation}
+              \begin{tabular}{l|c|c|c}
+                  \hline
+                  % 触覚提示位置（腕）
+                  Position(Sensing/Haptics) & Arm/Arm & Chest/Arm & Shoulder/Arm \\
+                  \hline
+                  Sense of having wings & 1 & 2 & 2 \\
+                  Sense of meneuvering the wings & 3 & 3 & 4\\
+                  Sense of air resistance & 3 & 3 & 3 \\
+                  Sense of flying with wings & 2 & 2 & 3 \\
+                  \hline\hline
+  
+                  % 筋電取得位置（胸）
+                  Position(Sensing/Haptics) & Arm/Abs & Chest/Abs & Shoulder/Abs \\
+                  \hline
+                  Sense of having wings & 3 & 3 & 3 \\
+                  Sense of meneuvering the wings & 3 & 3 & 4\\
+                  Sense of air resistance & 4 & 4 & 4 \\
+                  Sense of flying with wings & 3 & 4 & 3 \\                        
+                  \hline\hline
+  
+                  % 筋電取得位置（腹）
+                  Position(Sensing/Haptics) & Arm/Back & Chest/Back & Shoulder/Back  \\
+                  \hline                        
+                  Sense of having wings & 5 & 5 & 5 \\                        
+                  Sense of meneuvering the wings & 3 & 4 & 5 \\
+                  Sense of air resistance & 4 & 4 & 4\\
+                  Sense of flying with wings & 4 & 5 & 5 \\
+                  \hline\hline
+              \end{tabular}
+          \end{center}
+      \end{table}
+
+      % \tabref{exp1_result}と\tabref{exp2_result}の1行目は，
+      図4.2と図4.3の1行目は，
+      それぞれ前腕に触覚提示を行った場合の結果を示している．
+      図より，振動と電気刺激の主観評価に顕著な違いが無いことが分かる．従って，触覚提示として一般的な振動加え，電気刺激による提示も有用であることが言える．
+
+      また
+      % \tabref{exp2_result}
+      図4.3
+      
+      より，筋電計測位置と触覚提示位置によって主観評価の違いが表れているのが分かる．筋電計測・触覚提示ともに，四肢（腕）よりも胴体部分の方が全体的に評価が高くなっている．これより，筋電計測・触覚提示ともに，四肢（腕）よりも胴体へ行うことで羽ばたいて飛ぶ感覚を強く提示可能と考えられる．
+      
+      % 電気の有用性，提示位置と計測位置の位置による違い
+
+    \subsubsection{視覚提示方法の比較}
+      最後に，視覚提示方法について比較し主観評価を行う．視覚提示装置として，液晶ディスプレイとHMDを用意し，それぞれ3人称視点と1人称視点の映像を提示する．1人称視点の映像は，仮想翼を背中に配置し，体をひねって背中側を見ると仮想翼が生えているような映像が描画されるようにする．
+
+      翼の操作方法と触覚提示の条件を固定し，
+      % 視覚提示装置として液晶ディスプレイとHMDを比較する．
+      視覚提示として3人称視点と1人称視点を行った場合の比較する．
+      翼の操作方法は前腕・胸・肩の力みにより翼が閉じ，弛緩すると翼が開くように設計する．触覚提示は前腕・胸・腹・背中にEMS機器（\figref{EMG_device_HV-F122.pdf}）による電気刺激を行う．
+
+      検証より，3人称視点と比べ1人称視点の映像提示を行った場合の方が，自分の体から翼が生えている様子を強く感じた．3人称視点を提示を行った場合は，自らの翼を操作している感覚よりも，遠隔地の翼を操作している感覚，
+      道具の身体化ではなくRHI（Rubber Hand Illusion）のようなリマッピングの感覚
+      % （テレイグジスタンスような感覚）
+      を惹起させた．
+      % 身体像の拡張
+      道具の身体化
+      においては，3人称視点よりも1人称視点の映像提示の方が有効であることが分かった．
+  
+  \subsection{操作・提示位置の検討}
+    操作・提示方法の検討の結果，操作位置（筋電計測位置）と触覚提示位置によって羽ばたいて飛ぶ感覚の提示に違いが生じる事が分かった．そこで，位置による違いの比較を効率的に行うため，筋電計測・触覚提示位置の候補を挙げ，選定を行う．
+  
+    \subsubsection{操作位置の検討}
+      \fig{body-muscle.pdf}{width=1\hsize}{Muscle structure\cite{からだと病気のしくみ図鑑}}
+      
+      関節動作を伴わない筋収縮（静的筋収縮）が容易な部位として，四肢では腕（上腕二頭筋・上腕三頭筋），ふともも
+      （大腿直筋），ふくらはぎ（腓腹筋・ヒラメ筋）が挙げられる．胴体部では，胸（大胸筋），腹（腹直筋），肩（僧帽筋），臀部（大殿筋）が挙げられる．筋電計測において，計測点の皮下脂肪が多い場合，筋電位の振幅が減衰し不明瞭となる\cite{白石恵1992筋電位多点計測による体幹背部の神経支配帯の分布}．従って，比較的皮下脂肪が少ない部位を筋電計測位置として選択する必要がある．以上より，筋電計測位置として胸・肩と，ジェスチャと力みによる仮想翼の操作を比較するために，上腕二頭筋の動的筋収縮の3種類を用いる（\figref{body-muscle.pdf}）．
+
+    \subsubsection{提示位置の検討}
+      % \tabref{exp2_result}
+      図4.2
+      より，触覚提示の位置は四肢よりも胴体部に行った場合の方が評価が高いことが分かった．そこで，胴体の中でどこの部位が触覚提示として一番有効であるかを調査する．ヒトの感覚野の内，手の占める触知覚の割合が大きく\cite{penfield1950cerebral}，胴体部の触知覚の割合が少ない\cite{gibson1962observations}\cite{丸本耕次1997触覚表示の認知特性に関する研究}\cite{杉輝夫2005身体部位による触知覚の差}ことが知られている．従って，胴体部の提示部位を細かく分類するのではなく，大きく分類する方が部位ごとの感覚の違いを調査できると考える．そこで，胴体を上部・下部，表・裏の4部分（胸・腹・背中・腰）に大きく分けて，提示を行う．        
+
+      
+
+
+\section{主観評価実験を踏まえた位置による身体像拡張の差異を評価する被験者実験}
+        
+  \subsection{実験の目的}
+        第4章より，筋電計測位置と触覚提示位置によって羽ばたいて飛ぶ感覚の感じ方に違いが生じることが分かった．そこで，筋電計測位置と触覚提示位置による感じ方の違い（身体像拡張の度合）について，被験者実験より検証を行う．
+        
+  \subsection{人研究倫理審査}
+        % 倫理審査，コロナ関係は1段落で簡潔に触れる程度とする
+        本実験は「東京農工大学 人を対象とする研究に関する倫理審査委員会の倫理審査」を通過しており，実験は被験者の同意を得て行う（「翼で飛ぶ感覚を提示するVR（仮想現実）システムに関する研究」，倫理審査委員会承認番号 210908-0343）．
+        被験者の募集は学内メーリングリスト, 掲示, アルバイト募集用WEBサイトなどを利用して行う. 被験者の選定方針に関しては，胴体部（胸・腹・背中）に電極を貼る都合上，男性に限定する．ただし, 未成年の場合には保護者の承諾を取ることとする. 
+
+        また，被験者に生じるリスクとしては，実験中に発生するVR酔いや新型コロナウイルス感染症への感染がある．これらのリスクは，感染症予防対策を十分に行い，被験者が体調に違和感を感じたらすぐに対応することで対策をする．
+
+        被験者が回答したアンケートは，研究実施者以外アクセスできないようにし，保管期間（5年間）が過ぎたらシュレッダーに掛けて解読不能にして廃棄する．
+        
+        % 被験者実験の様子（予定）の図があるともっとわかりやすいかも
+
+  \subsection{被験者実験を行う実験環境}
+        % システムと装置の説明
+
+        \fig{subjectexp-Experiment_equipment_system.pdf}{width=1\hsize}{Experimental environment system}
+
+        % \fig{subjectexp-env.png}{width=1\hsize}{（写真だとわかりずらいので抽象的な図とか）Subjectexperiment environment}
+% 実験装置の具体的な接続に関しての図が欲しい
+
+% 実験の様子を表した図や写真も欲しい
+
+        \fig{hmd-vive_pro_eye.jpg}{width=0.7\hsize}{HTC VIVE PRO EYE}
+        \fig{VirtualWingsV2.png}{width=0.7\hsize}{Virtual Wings}
+
+       
+
+        被験者実験を行う実験環境について述べる．被験者実験では，第4章の主観評価実験と同様に\figref{subjectexp-Experiment_equipment_system.pdf}のような環境のシステムで実験を行う．
+
+        筋電計測装置にはMyoWare（\figref{MyoWare.pdf}）を使用し，Arduinoを用いて筋電位の値を取得する．
+        取得した筋電位の値を端末上のソフトウェア（Unity）へ送る．そして，Unityから視覚提示装置と触覚提示装置を制御する．
+
+        視覚提示装置にはVIVE PRO EYE（HTC社）\figref{hmd-vive_pro_eye.jpg}\cite{htc-vive}を用いる．VIVE PRO EYEを用いて，仮想翼（\figref{VirtualWingsV2.png}）が生えている様子を，1人称視点で提示する．
+
+
+        \fig{subjectexp-Haptics_dev_motor.pdf}{width=1\hsize}{Haptics display device（Vibration）}
+
+        \fig{subjectexp-Haptics_dev_ems.pdf}{width=1\hsize}{Haptics display device（EMS）}
+
+        触覚提示装置は，\figref{subjectexp-Haptics_dev_motor.pdf}と\figref{subjectexp-Haptics_dev_ems.pdf}を用いる．\figref{subjectexp-Haptics_dev_motor.pdf}は，偏心モータをArduinoから
+        % PWMで
+        制御し振動を与える装置である．\figref{subjectexp-Haptics_dev_motor.pdf}は，低周波治療器（Omron HV-F127\cite{Omron-HV-F127}）をArduinoで制御し，電気刺激を与える装置である．
+        % （修正）触覚提示装置に関してもう少し詳しく書いた方が良い（Ex. 通信方式（シリアル），データの処理...）
+
+        % 操縦方法について（物理環境→操作方法→提示）
+        実験の物理環境について述べる．
+        本実験でのVR空間では，飛行を行いやすくするために重力加速度$g^{\prime}$を月と同等（\equref{gravity}）に設定する．
+        \begin{eqnarray}
+                \equlabel{gravity}
+                g^{\prime}=1.62\;[m/s^{2}]
+        \end{eqnarray}
+
+        また，飛行の際に\equref{air_resistance}のような，速度に比例した空気抵抗$R\;[N]$を与える．
+        \begin{eqnarray}
+                \equlabel{air_resistance}
+                \bm{R}=k\bm{v} \;[N]
+        \end{eqnarray}
+        $k$は比例定数（$k=5.0$）．
+        % 進行方向，上昇方向どちらも比例定数は等しい
+
+        \fig{Movement_of_VirtualWingsV2.pdf}{width=0.7\hsize}{Movement of Virtual Wings}
+
+        VR空間内での具体的な飛行方法について述べる．
+        まず，翼の操作方法は，操作位置（筋電計測位置）を力ませている間は仮想翼が内側に羽ばたき，弛緩させると仮想翼を広げる用に設計する（\figref{Movement_of_VirtualWingsV2.pdf}）．
+        % 仮想翼が操作位置を力ませ
+        仮想翼を羽ばたかせることにより，進行・上昇方向へ力が発生し飛行する（波状飛行\cite{bird-flying}）ことができる．この際発生する力$F\;[N]$は\equref{force}に従う．
+        % この式についてのrefをしっかりする（空機抵抗の終端速度の式を参考にしたが，もっと理屈的に説明できるように）
+        \begin{eqnarray}
+                \equlabel{force}
+                \bm{F}=\frac{a}{\bm{l}}  \tanh\left(\,\frac{x}{a}\,\right) \;[N]
+        \end{eqnarray}
+        \begin{eqnarray}
+                \equlabel{force_prop}
+                \bm{l}=\begin{pmatrix}400 \\ 500 \end{pmatrix}
+        \end{eqnarray}
+        $l\;$は比例定数（1行目：進行方向，2行目：上昇方向）．$a\;$[N]は計測可能な筋電位の最大値（$a=1024$），$x\;$[N]は計測された筋電位．
+
+        また，仮想翼を内側に羽ばたかせている際に，触覚提示を行う．この時の触覚提示の強さ$P\;[N]$は計測された筋電位に応じて\equref{haptics}の変化するようにする．
+        % ウェーバー・フェヒナーの法則\equref{weber_fechner}\cite{10011340169}より，人間の感覚の大きさは受ける刺激の強さの対数に比例することが知られている．
+        % \begin{eqnarray}
+        %         \equlabel{weber_fechner}
+        %         P = k \log{e}\frac{I}{I_{0}}
+        % \end{eqnarray}
+        % $P:\;$感覚の強さ（Perception），$I:\;$刺激の強さ（Intensity of stimulation），$I_{0}:\;$感覚の強さが0になる刺激の強さ，$k:\;$刺激固有の定数．
+        % 従って，触覚提示の強さを対数に比例するように\equref{haptics}に従うようにする．
+        
+        \begin{eqnarray}
+                \equlabel{haptics}
+                P=a \tanh\left(\,\frac{x}{a}\,\right) \;[N]
+        \end{eqnarray}
+        
+  \subsection{実験方法}
+        筋電計測位置3種と触覚提示位置4種と触覚提示装置2種の比較を行う．以下に各項目について示す．
+
+        \begin{itemize}
+        \item 筋電計測位置
+                \begin{itemize}
+                \item 上腕二頭筋（動的収縮）
+                \item 大胸筋（静的収縮）
+                \item 僧帽筋（静的収縮）
+                \end{itemize}
+        \item 触覚提示位置
+                \begin{itemize}
+                \item 胸
+                \item 腹
+                \item 腰
+                \item 背中
+                \end{itemize}
+        \item 触覚提示種類
+                \begin{itemize}
+                \item 振動
+                \item 電気刺激
+                \end{itemize}
+        \end{itemize}
+
+        実験の手順を示す．
+        \begin{itemize}
+        \item まず，触覚提示として振動を用いた装置を使用する．筋電計測位置を上腕二頭筋（一番力み動作が容易な部位）に固定し，触覚提示位置を変化させ比較を行う．
+        \item 触覚提示位置を，先ほどの一番評価が高い部位に固定し，筋電計測位置を変化させ比較を行う．
+        \item 次に，触覚提示として電気刺激を用いた装置を使用する．筋電計測位置を一番評価が高かった部位に固定し，触覚提示位置を変化させ比較を行う．
+        \item 触覚提示位置を一番評価が高かった部位に固定し，筋電計測位置を変化させ比較を行う．
+        \item 最後に，アンケートに回答してもらう．
+        \end{itemize}
+
+
+        アンケートには9段階のリッカート尺度\cite{lickert1932method}を用いて回答してもらう．以下にアンケートの内容を示す．
+        \begin{itemize}
+        \item 触覚提示（胸・腹・腰・背中）の中で，羽ばたいて飛んでいる感覚が強かった順番とそれぞれの評価を記述してください．
+        \item 筋電計測位置（腕・胸・肩）の中で，羽ばたいて飛んでいる感覚が強かった順番とそれぞれの評価を記述してください．\\
+        （上記2つの質問を触覚提示として振動と電気刺激を用いた場合の2回行う．）
+        \item  触覚提示として振動と電気刺激どちらの方が羽ばたいて飛んでいる感覚が強かったか．
+        % またそれぞれの評価を記述してください．
+        \item 筋電計測位置と触覚提示位置のどちらの方が，羽ばたいて飛ぶ感覚の提示において重要だと感じたか．
+        \item 背中から生えた翼で，羽ばたいて飛ぶ感覚を感じることが出来たか．
+        \end{itemize}
+
+
+  \subsection{実験結果と考察}
+        % 視覚的な結果
+        \fig{subjectexp-result_haptics_pos.png}{width=0.8\hsize}{Comparison of haptics display positions}
+
+        \fig{subjectexp-result_emg_pos.png}{width=0.8\hsize}{Comparison of EMG mesuring position}
+
+        \fig{subjectexp-result_vib_or_ems.png}{width=0.8\hsize}{Comparison of Vibration and EMS}
+
+        \fig{subjectexp-result_mesure_or_presen.png}{width=0.8\hsize}{Comparison of mesuring position and haptcs presentation position}
+
+        % 数値的な結果
+        % \begin{table}[tb]
+        %         \tablabel{subexp-bodyimage_expansion}
+        %         \begin{center}
+        %           \caption{Results of subject experiment}
+        %           \begin{tabular}{l|c|c|c|c}
+        %                 \hline
+        %                 Questionnaire & Evaluated value \\
+        %                 \hline
+        %                 Haptic presentation position(Vibration) & Chest & Abs & Waist & Back\\
+
+
+        %                 Average of Evaluated Value [-] & 7.4\\
+        %                 \hline
+        %                 \\
+        %                 \hline
+        %           \end{tabular}
+        %         \end{center}
+        %       \end{table}
+
+        \figref{subjectexp-result_haptics_pos.png}，\figref{subjectexp-result_emg_pos.png}，\figref{subjectexp-result_vib_or_ems.png}，\figref{subjectexp-result_mesure_or_presen.png}に被験者実験のアンケート結果を示す．被験者は15人で，20から24歳の男性である．
+
+        \figref{subjectexp-result_haptics_pos.png}は，筋電計測位置を固定し触覚提示位置のを比較した際の評価の平均値を表した図である．
+        図より，提示機器が振動・電気刺激に関わらず背中，腰，胸，腹の順番に評価が高いことが分かる．これより触覚の提示位置は，視覚提示で与えた仮想翼の位置からの絶対的な距離よりも，胴体の前面・後面が身体像拡張
+        % （道具の身体化）
+        の評価に影響することがわかる．
+
+        \figref{subjectexp-result_emg_pos.png}は，触覚提示位置を固定し筋電計測位置の比較した際の評価の平均値である．
+        図より，提示機器が振動・電気刺激に関わらず，肩による仮想翼の操作の評価が一番高いことが確認できる．また，筋肉の位置が近い腕（動的筋収縮）と胸（静的筋収縮）の評価には大きな違いが見られない．これより身体像拡張において，ジェスチャ（動的筋収縮）による操作と関節動作を伴わない力み（静的筋収縮）による操作によって惹起される感覚に大きな違いが生じないと考えられる．そして，腕が直感的動作であるなジェスチャであるのに対し，胸の力みは普段行わない動作且つ行いにくい動作であるのにも関わらず評価の差異が少ない．これより，
+        % 胸による
+        力みによる操作の訓練を行うことで，力みによる操作がジェスチャによる操作よりも仮想翼の身体像拡張において有効になることが期待できる．
+
+        振動と電気刺激の触覚提示の比較を\figref{subjectexp-result_vib_or_ems.png}に示す．7人の被験者が触覚提示として振動を用いた方が良いと感じ，残りの8人の被験者が電気刺激を用いた方が良いと回答した．これより，触覚提示として一般的な振動に加え，電気刺激を用いた提示方法も有用であることが分かる．また，\figref{subjectexp-result_emg_pos.png}，\figref{subjectexp-result_haptics_pos.png}より，全体的に電気刺激を用いた提示の方が評価が高いことが分かる．これは，振動を用いた触覚提示が皮膚表面（表在感覚）に対しての刺激であるのに対し，電気刺激を用いた触覚提示は皮膚表面に加えて筋肉（深部感覚）へも刺激が伝わり易く，提示される感覚のモードが増えたことが要因と考えられる．
+
+        \figref{subjectexp-result_mesure_or_presen.png}は，四肢から独立した翼で羽ばたいて飛ぶ感覚の提示について筋電計測位置と触覚提示位置のどちらが重要であるかという質問の結果である．図より，振動・電気刺激どちらの場合でも筋電計測位置が重要であると答える被験者が多かった．
+        触覚提示位置が翼からの反応であることに対し，筋電計測位置はヒトから働きかける情報を取得する部分である．
+        これより，被験者が自分で翼を動かしている感覚，自己主体感を重視していると捉えることができる．
+        第2章では，RHIの研究例\cite{armel2003projecting}で，身体像拡張において触覚提示位置の空間的一致は柔軟であると述べた．しかし，実験結果より筋電計測位置（力みによる操作位置）に関しては，身体像拡張において空間的一致が重要であると考えられる．
+
+        % 身体像拡張において，計測位置と触覚提示位置のどちらが重要であるかと感じたか，という質問では振動・電気刺激問わず計測位置を選択した被験者が多いことが分かる（\figref{subjectexp-result_mesure_or_presen.png}）．慣れない力みでの仮想翼の操作にも関わらず測定位置の方が重視されていることより，力み動作を訓練することでより強く仮想翼の身体像拡張が行えることが期待できる．
+
+        最後に，背中から生えた翼で羽ばたいて飛ぶ感覚を感じることが出来たかという項目には，平均で7.11の評価を得ることができた．従って，本研究で提案した手法での仮想翼の身体像拡張が可能であることが分かった．
+
+
+\section{結論および今後の展望}
+    本稿では，翼を動かして飛ぶ感覚を与える研究に注目し，四肢を用いず翼を操作している感覚の提示方法と，VR空間で翼に作用する力をヒトに伝達する手法を提案した．
+    実験装置のシステムを作成し，振動とEMS装置による力覚提示についての有用性についての主観評価実験を行った．そして主観評価実験を踏まえ，位置による身体像拡張の差異を評価する被験者実験を行った．
+    実験より，触覚提示位置が，絶対的な距離よりも胴体の前面・後面の要素が重要となることが分かった．また，筋電計測位置について，ジェスチャに加え力みによる操作も有効であること，訓練次第でジェスチャよりも力みによる操作の方が評価が高くなる可能性があることを示した．そして，触覚として電気刺激を用いた提示の方が全体的に評価が高くなることが分かった．そして，本研究で提案した手法での仮想翼の身体像拡張が可能であることが分かった．
+
+    
+    今後の展望として，まず仮想翼からヒトへの提示情報を増やすことが挙げられる．前庭電気刺激による加速度感覚\cite{maeda2005shaking}\cite{青山一真2014前庭電気刺激における逆方向不感電流を用いた加速度感覚の増強}や，風や音の追加が考えられる．
+
+    また，実験に用いた装置の改良が考えられる．本研究では，1点で筋電の計測を行っていたが，多点で筋電計測を行うことで，より安定した筋電位を取得することができる\cite{白石恵1992筋電位多点計測による体幹背部の神経支配帯の分布}．触覚提示装置は，提示可能な周波数帯域を広げることで，より繊細な触覚提示が可能となる．本稿は筋電計測位置と触覚提示位置をある程度絞って比較を行ったが，これら候補を増やすことで位置による違いをより詳しく知ることができるだろう．
+
+    そして，今回は仮想翼で飛行するだけであったが，飛行しながらの的当てタスクといったことを行い点数を付けることで，四肢から独立した翼での飛行体験を評価することや，身体像の拡張がどの程度成功できているかを客観的に評価
+    % できる指標を準備することが求められる．
+    が可能となると考える．
+  
+% \section{未}
+%     \begin{itemize}
+%     \item 長期間使用したときの脳地図の変化(義手をしようすると脳地図に書き込まれる)
+%     \item 触覚提示の周波数帯域を広げる(より細かい触覚提示)
+%     \item 触覚提示のデバイスを向上(ハプティックスーツ(振動，電気))
+%     \item 仮想翼と実翼の比較
+%     \item 翼の生える位置変更したときの比較
+%     \item 位置による比較を行った->拡張(翼の根元だけの提示)とリマップ(背中全体への提示)の比較
+%     \item 客観的に身体像が拡張されたかどうかを確認する手法
+%     \end{itemize}
+
+
 %% \begin{thebibliography}{99}
 %% \small
 %%  \setlength{\kanjiskip}{0.0zw plus.01zw} %
