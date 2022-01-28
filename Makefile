@@ -1,6 +1,6 @@
-TARGET= main
+TARGET= soturon-maezuri-template 
+# main
 # tuatmech-master-chukan-template
-# tuatmech-master-chukan-template 
 # soturon-maezuri-template 
 #TARGETに指定されたものがmakeされる．不要なものはコメントアウトしよう．
 
