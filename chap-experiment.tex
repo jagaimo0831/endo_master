@@ -30,10 +30,13 @@
     液晶モニターでの視覚提示とHMDを用いた視覚提示の2種類を準備する．液晶モニターはGW2765HT（BenQ），HMDはMeta社のMeta Quest（\figref{hmd-oculus_quest.jpg}）\cite{OculusQuest}を使用する．視覚提示する際に使用する仮想翼を\figref{exprtiment-VirtualWings_skeleton.pdf}に示す．
 
 \section{操作・提示方法の検討}
+\fig{experiment-comparison_of_method.png}{width=1\hsize}{（仮）comparison of method}
+% この図を活用してもっと分かり易く比較する
+
     \subsection{翼の操作方法の比較}
         まず，翼の操作方法について比較し，主観評価を行う．第3章で述べたように，本研究ではヒトから翼への情報伝達として筋電位を用いる．筋電位を用いた操作方法は，関節動作を伴う動きであるジェスチャ（動的筋収縮）と，関節動作を伴わない力み静的筋収縮\cite{thistle1967isokinetic}による操作に分類することが出来る．
 
-        触覚と視覚提示の条件を固定し，ジェスチャと力みによる操作を比較する． 触覚はMyoを用いた振動を前腕に提示，視覚は仮想翼の3人称視点を液晶ディスプレイに描画し提示する．
+        触覚と視覚提示の条件を固定し，ジェスチャと力みによる操作を比較する． 触覚はMyoを用いた振動を前腕に提示，視覚は仮想翼の3人称視点を液晶ディスプレイ（\figref{Manipulation_of_VirtualWings_using_Myo.pdf}，\figref{Manipulation_of_VirtualWings_using_MyoWare.pdf}）に描画し提示する．
 
         \fig{Manipulation_of_VirtualWings_using_Myo.pdf}{width=0.8\hsize}{Manipulation of virtual wings skeleton using Myo}
         \fig{Manipulation_of_VirtualWings_using_MyoWare.pdf}{width=0.8\hsize}{Manipulation of virtual wings skeleton using MyoWare}
@@ -49,7 +52,7 @@
         % 第3章で述べたように
         本研究では，触覚として振動を用いた触覚提示と電気刺激を用いた触覚提示の2つを準備する．
 
-        翼の操作方法と視覚提示の条件を固定し，触覚として振動を用いた提示と電気刺激を用いた提示を比較する．翼の操作方法はMyoWareを用いて前腕・胸・肩の力みにより翼が閉じ，弛緩すると翼が開くようにする．視覚提示は液晶ディスプレイに3人称視点での翼の動きを描画して提示を行う．
+        翼の操作方法と視覚提示の条件を固定し，触覚として振動を用いた提示と電気刺激を用いた提示を比較する．翼の操作方法はMyoWareを用いて前腕・胸・肩の力みにより翼が閉じ，弛緩すると翼が開くようにする．視覚提示は液晶ディスプレイに3人称視点での翼の動き（\figref{Manipulation_of_VirtualWings_using_MyoWare.pdf}）を描画して提示を行う．
 
         % \tabref{exp1_result}，\tabref{exp2_result}
         図4.1と図4.2
@@ -60,8 +63,7 @@
         \begin{table}[tb]
             \tablabel{exp1_result}
             \begin{center}
-                \caption{Results of an experiment using vibration as a haptics presentation\\}
-                
+                \caption{Results of an experiment using vibration as a haptics presentation}
                 \begin{tabular}{l|c|c|c}
                     \hline
                     Position(Sensing/Haptics) & Arm/Arm & Chest/Arm & Shoulder/Arm\\
