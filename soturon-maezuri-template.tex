@@ -1,6 +1,7 @@
 \input{tuat-common.tex}
 
 \usepackage{jtygm}
+\usepackage{graphics} % scaleboxを扱うためのパッケージ
  
 \secret{b}{0mm}                 %学外秘/専攻外秘の設定．学部はb（学外秘），修士はm（専攻外秘）にする．
                                 %第2引数は位置の調整用．-側に大きくすれば左に寄る．+側に大きくすれば右に寄る．
@@ -190,17 +191,17 @@
         \tablabel{comparison items}
         \begin{center}
             \caption{Comparison items}
-            
-            \begin{tabular}{l|c|c|c}
-                \hline
-                Comparison item & Wings operation & Haptics display & Visual display\\
-                \hline
-                Wings operation & Gesture/Strengthen & Vibration & TPP \\
-                Haptics display & Strengthen & Vibration/EMS & TPP \\
-                Visual display & Strengthen & EMS & TPP/FPP \\
-                \hline
-            \end{tabular}
-                       
+            \scalebox{0.75}{
+              \begin{tabular}{l|c|c|c}
+                  \hline
+                  Comparison item & Wings operation & Haptics display & Visual display\\
+                  \hline
+                  Wings operation & Gesture/Strengthen & Vibration & TPP \\
+                  Haptics display & Strengthen & Vibration/EMS & TPP \\
+                  Visual display & Strengthen & EMS & TPP/FPP \\
+                  \hline
+              \end{tabular}
+            }          
         \end{center}
     \end{table}
 
