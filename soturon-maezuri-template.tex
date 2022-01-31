@@ -40,16 +40,14 @@
   \figref{WingMan.png}は，四肢から独立した翼で羽ばたいて飛ぶ様子を示した図である．
   本研究では，VRシステムを用いて\figref{WingMan.png}のように，ヒトの背中から翼が生えた生物になり羽ばたいて飛ぶ感覚の提示手法を提案する．
   
-  \subsection{本研究での羽ばたいて飛ぶ感覚の定義}
-    本論文では「浮遊感」，「飛ぶ感覚」，「羽ばたいて飛ぶ感覚」を\figref{intro-Classification_of_floating_feeling.pdf}のように位置付ける．
-    \fig{intro-Classification_of_floating_feeling.pdf}{width=.9\hsize}{Classification of floating feeling}
-
-    「浮遊感」とは,空中に浮いて漂っている感覚を指す.「飛ぶ感覚」は浮遊感に空中を移動する感覚を追加したものとする.本稿で注目する「羽ばたいて飛ぶ感覚」は,飛ぶ感覚に加え,翼を羽ばたかせる感覚を追加したものである.
+  % \subsection{本研究での羽ばたいて飛ぶ感覚の定義}
+  %   本論文では「浮遊感」，「飛ぶ感覚」，「羽ばたいて飛ぶ感覚」を次のように位置づける．
+  %   「浮遊感」とは,空中に浮いて漂っている感覚を指す.「飛ぶ感覚」は浮遊感に空中を移動する感覚を追加したものとする.本稿で注目する「羽ばたいて飛ぶ感覚」は,飛ぶ感覚に加え,翼を羽ばたかせる感覚を追加したものである.
 
   \subsection{研究の背景と目的}
     VR装置を用いた「浮遊感」や「飛ぶ感覚」を与える研究は多く行われてきた．視覚刺激をによって発生する落下感覚に関しての研究\cite{奥川夏輝2017VR空間における視覚刺激によって発生する落下感覚の分析}や身体幇助メカニズムを用いた飛行体験装置の提案\cite{鈴木拓馬2014hmd}等がある．また，飛行しているドローンを上半身のジェスチャーで制御し，ドローンからの映像をHMD（Head Mounted Display: ヘッドマウントディスプレイ）によって与えることで飛ぶ感覚を提示する研究\cite{rognon2018flyjacket}もある．
 
-    \fig{Birdly.jpg}{width=0.7\hsize}{System of presenting the sensation of flying with flapping\cite{rheiner2014birdly}}
+    \fig{Birdly.jpg}{width=0.6\hsize}{System of presenting the sensation of flying with flapping\cite{rheiner2014birdly}}
 
     「羽ばたいて飛ぶ感覚」を与える研究について，\figref{Birdly.jpg}のような操縦装置に登場し，飛行中の鳥の体験をすることができる装置の研究が行われている\cite{rheiner2014birdly}\cite{hypersuit}．
     上記装置は，操縦装置にうつ伏せで搭乗し手と腕を用いて翼を動かしながら，鳥視点での景色の映像を提示することで，飛行中の鳥のような体験できる装置である．この方法の場合，大がかりな装置が必要であることや，手足の動きが制限されるといったデメリットが存在する．
@@ -173,17 +171,22 @@
     
     主観評価実験を行う実験環境について述べる．\figref{experiment-Experiment_equipment_system.pdf}のような，筋電計測装置で計測した値を，端末上のソフトウェア（Unity）へ送信し，Unity上から視覚提示装置と触覚提示装置を動作させるシステムを用いる．
 
-    \fig{myo_armband.pdf}{width=0.8\hsize}{Myo（Thalmic Labs）}
-    \fig{MyoWare.pdf}{width=0.7\hsize}{MyoWare（Advancer Technologies LLC）}
-    まず，筋電計測装置として，ジェスチャと力みによる操作を比較するためにMyo（\figref{myo_armband.pdf}）\cite{thalmiclabs}とMyoWare（\figref{MyoWare.pdf}）\cite{advancertechnologies}の2つを用意する．MyoはThalmic Labsが開発した，筋電センサを搭載したマルチジェスチャバンドであり，上腕部の筋肉位から，腕・手首・指の動きのジェスチャを識別することが可能な乾式筋電センサである．MyoWareはAdvancer Technologiesが提供する湿式筋電センサであり，Myoと異なり任意の筋肉の筋電位を計測することができ，Arduino等の外部接続したマイコンで簡単に筋電位を読み取ることが可能である．
+    \fig{maezuri-EMG_dev.pdf}{width=.9\hsize}{EMG devices（Left: Myo, Right: MyoWare）}
+
+    % \fig{myo_armband.pdf}{width=0.8\hsize}{Myo（Thalmic Labs）}
+    % \fig{MyoWare.pdf}{width=0.7\hsize}{MyoWare（Advancer Technologies LLC）}
+
+    まず，筋電計測装置として，ジェスチャと力みによる操作を比較するためにMyo（\figref{maezuri-EMG_dev.pdf}）\cite{thalmiclabs}とMyoWare（\figref{maezuri-EMG_dev.pdf}）\cite{advancertechnologies}の2つを用意する．MyoはThalmic Labsが開発した，筋電センサを搭載したマルチジェスチャバンドであり，上腕部の筋肉位から，腕・手首・指の動きのジェスチャを識別することが可能な乾式筋電センサである．MyoWareはAdvancer Technologiesが提供する湿式筋電センサであり，Myoと異なり任意の筋肉の筋電位を計測することができ，Arduino等の外部接続したマイコンで簡単に筋電位を読み取ることが可能である．
 
     \fig{EMG_device_HV-F122.pdf}{width=0.7\hsize}{HV-F122（Omron社）}
     次に，触覚提示については，振動での提示機器とEMSを用いた電気刺激での提示機器を用意する．それぞれ，振動での触覚提示はMyoの振動機能，電気刺激での触覚提示は低周波治療器Omron HV-F122（\figref{EMG_device_HV-F122.pdf}）\cite{Omron-HV-F122}を用いる．
 
-    \fig{hmd-oculus_quest.jpg}{width=0.7\hsize}{Meta Quest（Meta Platforms Inc.）}
+    % \fig{hmd-oculus_quest.jpg}{width=0.7\hsize}{Meta Quest（Meta Platforms Inc.）}
     \fig{exprtiment-VirtualWings_skeleton.pdf}{width=0.7\hsize}{Virtual Wings skeleton}
 
-    そして，視覚提示装置は3人称視点と1人称視点を比較するため，液晶モニターでの視覚提示とHMDを用いた視覚提示の2種類を準備する．液晶モニターはGW2765HT（BenQ），HMDはMeta社のQuest（\figref{hmd-oculus_quest.jpg}）\cite{OculusQuest}を使用する．視覚提示する際に使用する仮想翼を\figref{exprtiment-VirtualWings_skeleton.pdf}に示す．
+    そして，視覚提示装置は3人称視点と1人称視点を比較するため，液晶モニターでの視覚提示とHMDを用いた視覚提示の2種類を準備する．液晶モニターはGW2765HT（BenQ），HMDはMeta社のQuest
+    % （\figref{hmd-oculus_quest.jpg}）\cite{OculusQuest}
+    を使用する．視覚提示する際に使用する仮想翼を\figref{exprtiment-VirtualWings_skeleton.pdf}に示す．
 
   \subsection{操作・提示方法の検討}
 
