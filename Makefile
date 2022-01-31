@@ -1,4 +1,4 @@
-TARGET= soturon-maezuri-template
+TARGET= main #soturon-maezuri-template
 # main
 # tuatmech-master-chukan-template
 # soturon-maezuri-template 
