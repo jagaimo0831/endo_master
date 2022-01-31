@@ -52,7 +52,7 @@
   %   「浮遊感」とは,空中に浮いて漂っている感覚を指す.「飛ぶ感覚」は浮遊感に空中を移動する感覚を追加したものとする.本稿で注目する「羽ばたいて飛ぶ感覚」は,飛ぶ感覚に加え,翼を羽ばたかせる感覚を追加したものである.
 
   \subsection{研究の背景と目的}
-    VR装置を用いた「浮遊感」や「飛ぶ感覚」を与える研究は多く行われてきた．視覚刺激をによって発生する落下感覚に関しての研究\cite{奥川夏輝2017VR空間における視覚刺激によって発生する落下感覚の分析}や身体幇助メカニズムを用いた飛行体験装置の提案\cite{鈴木拓馬2014hmd}等がある．
+    VR装置を用いた「浮遊感」や「飛ぶ感覚」を与える研究は多く行われてきた．視覚刺激によって発生する落下感覚に関しての研究\cite{奥川夏輝2017VR空間における視覚刺激によって発生する落下感覚の分析}や身体幇助メカニズムを用いた飛行体験装置の提案\cite{鈴木拓馬2014hmd}等がある．
     % また，飛行しているドローンを上半身のジェスチャーで制御し，ドローンからの映像をHMD（Head Mounted Display: ヘッドマウントディスプレイ）によって与えることで飛ぶ感覚を提示する研究\cite{rognon2018flyjacket}もある．
 
     % \fig{Birdly.jpg}{width=0.6\hsize}{System of presenting the sensation of flying with flapping}
@@ -148,9 +148,9 @@
    
 
     \subsection{視覚の提示} % 本当はsubsubsection{}
-      \fig{hmd_vection.png}{width=.9\hsize}{Presentation of visual information by using the virtual environment}  
+      \fig{maezuri-Visual_presentation.pdf}{width=.9\hsize}{Presentation of visual information by using the virtual environment}  
       
-      視覚を用いた提示は，\figref{hmd_vection.png}のようにPCソフトウェア（Unity）で作成した映像を視覚ディスプレイに出力することで行う．
+      視覚を用いた提示は，\figref{maezuri-Visual_presentation.pdf}のようにPCソフトウェア（Unity）で作成した映像を視覚ディスプレイに出力することで行う．
       出力される映像は，空中を移動している様子と，背中からはえた翼の一部が見える様子を提示する．
 
       % 空中を移動している様子の提示について述べる．
@@ -178,9 +178,9 @@
 \section{提案手法を用いた身体像拡張の主観評価実験}
 
   \subsection{主観評価実験を行う実験環境}
-    \fig{experiment-Experiment_equipment_system.pdf}{width=1\hsize}{Experimental environment system}
+    \fig{maezuri-Experiment_equipment_system.pdf}{width=1\hsize}{Experimental environment system}
     
-    主観評価実験を行う実験環境について述べる．\figref{experiment-Experiment_equipment_system.pdf}のような，筋電計測装置で計測した値を，端末上のソフトウェア（Unity）へ送信し，Unity上から視覚提示装置と触覚提示装置を動作させるシステムを用いる．
+    主観評価実験を行う実験環境について述べる．\figref{maezuri-Experiment_equipment_system.pdf}のような，筋電計測装置で計測した値を，端末上のソフトウェア（Unity）へ送信し，Unity上から視覚提示装置と触覚提示装置を動作させるシステムを用いる．
 
     \fig{maezuri-EMG_dev.pdf}{width=.9\hsize}{EMG devices（Left: Myo, Right: MyoWare）}
 
@@ -204,7 +204,7 @@
   \subsection{操作・提示方法の検討}
 
     \begin{table}[tb]
-        \tablabel{comparison items}
+        \tablabel{comparison}
         \begin{center}
             \caption{Comparison items}
             \scalebox{0.70}{
@@ -221,13 +221,16 @@
         \end{center}
     \end{table}
 
-    \tabref{comparison items}に比較項目を示す（FPP...First Person Perspective, TPP...Third Person Perspective）．
+    % \tabref{comparison}
+    表4.1に比較項目を示す．FPPはFirst Person Perspective, TPPはThird Person Perspectiveである．
 
 
    \subsection{翼の操作方法の比較} % 本当はsubsubsection{}
       まず，翼の操作方法について比較を行う．筋電位を用いた操作方法は，関節動作を伴う動きであるジェスチャ（動的筋収縮）と，関節動作を伴わない力み静的筋収縮\cite{thistle1967isokinetic}による操作に分類することが可能である．
 
-      触覚と視覚提示の条件を固定し，ジェスチャと力みによる操作を比較する（\tabref{comparison items}）．
+      触覚と視覚提示の条件を固定し，ジェスチャと力みによる操作を比較する（
+      % \tabref{comparison_items}
+      表4.1）．
       % 触覚はMyoを用いた振動を前腕に提示，視覚は仮想翼の3人称視点を液晶ディスプレイ（\figref{Manipulation_of_VirtualWings_using_Myo.pdf}，\figref{Manipulation_of_VirtualWings_using_MyoWare.pdf}）に描画し提示する．
 
       \fig{Manipulation_of_VirtualWings_using_Myo.pdf}{width=0.9\hsize}{Manipulation of virtual wings skeleton using Myo}
@@ -243,10 +246,12 @@
     \subsection{触覚提示方法の比較} % 本当はsubsubsection{}
       次に，触覚提示方法について振動とEMSを用いた方法の比較を行う．
     
-      翼の操作方法と視覚提示の条件を固定し，触覚として振動を用いた提示と電気刺激を用いた提示を比較する（\tabref{comparison items}）．翼の操作方法はMyoWareを用いて前腕・胸・肩の力みにより翼が閉じ，弛緩すると翼が開くようにする．視覚提示は液晶ディスプレイに3人称視点での翼の動き（\figref{Manipulation_of_VirtualWings_using_MyoWare.pdf}）の提示を行う．
+      翼の操作方法と視覚提示の条件を固定し，触覚として振動を用いた提示と電気刺激を用いた提示を比較する（
+      % \tabref{comparison_items}
+      表4.1）．翼の操作方法はMyoWareを用いて前腕・胸・肩の力みにより翼が閉じ，弛緩すると翼が開くようにする．視覚提示は液晶ディスプレイに3人称視点での翼の動き（\figref{Manipulation_of_VirtualWings_using_MyoWare.pdf}）の提示を行う．
 
       % \tabref{exp1_result}，\tabref{exp2_result}
-      図4.2と図4.3
+      表4.2と表4.3
       に，触覚提示として振動と電気刺激を行った際の，実験中の仮想翼からヒトへの情報提示についてリッカート尺度を用いた5段階の主観評価を示す．
       
       \begin{table}[tb]
@@ -307,13 +312,13 @@
       \end{table}
 
       % \tabref{exp1_result}と\tabref{exp2_result}の1行目は，
-      図4.2と図4.3の1行目は，
+      表4.2と表4.3の1行目は，
       それぞれ前腕に触覚提示を行った場合の結果を示している．
-      図より，振動と電気刺激の主観評価に顕著な違いが無いことが分かる．従って，触覚提示として一般的な振動加え，電気刺激による提示も有用であることが言える．
+      表より，振動と電気刺激の主観評価に顕著な違いが無いことが分かる．従って，触覚提示として一般的な振動加え，電気刺激による提示も有用であることが言える．
 
       また
       % \tabref{exp2_result}
-      図4.3より，
+      表4.3より，
       % 筋電計測位置と触覚提示位置によって主観評価の違いが表れているのが分かる．
       筋電計測・触覚提示ともに，四肢（腕）よりも胴体部分の方が全体的に評価が高くなっているのが分かる．これより，筋電計測・触覚提示ともに，四肢よりも胴体へ行うことで羽ばたいて飛ぶ感覚を強く提示可能と考えられる．
       
@@ -325,11 +330,15 @@
 
       翼の操作方法と触覚提示の条件を固定し，
       % 視覚提示装置として液晶ディスプレイとHMDを比較する．
-      視覚提示として3人称視点と1人称視点を行った場合の比較する（\tabref{comparison items}）．
+      視覚提示として3人称視点と1人称視点を行った場合の比較する（
+      % \tabref{comparison_items}
+      表4.1）．
       翼の操作方法は前腕・胸・肩の力みにより翼が閉じ，弛緩すると翼が開くように設計する．触覚提示は前腕・胸・腹・背中にEMS機器（\figref{EMG_device_HV-F122.pdf}）による触覚提示を行う．
 
       検証より，3人称視点と比べ1人称視点の映像提示を行った場合の方が，自分の体から翼が生えている様子を強く感じた．3人称視点を提示を行った場合は，自らの翼を操作している感覚よりも，遠隔地の翼を操作している感覚，
-      道具の身体化ではなくRHI（Rubber Hand Illusion）のようなリマッピングの感覚
+      道具の身体化ではなくRHI
+      % （Rubber Hand Illusion）
+      のようなリマッピングの感覚
       % （テレイグジスタンスような感覚）
       を惹起させた．
       % 身体像の拡張
@@ -346,7 +355,7 @@
 
     \subsection{提示位置の検討} % 本当はsubsubsection{}
       % \tabref{exp2_result}
-      図4.2
+      表4.2
       より，触覚提示の位置は四肢よりも胴体部に行った場合の方が評価が高いことが分かった．そこで，胴体の中でどこの部位が触覚提示として一番有効であるかを調査する．ヒトの感覚野の内，手の占める触知覚の割合が大きく\cite{penfield1950cerebral}，胴体部の触知覚の割合が少ない
       % \cite{gibson1962observations}
       ことが知られている．従って，胴体部の提示部位を細かく分類するのではなく，大きく分類する方が部位ごとの感覚の違いを調査できると考える．そこで，胴体を上部・下部，表・裏の4部分（胸・腹・背中・腰）に大きく分けて，提示を行う．        
@@ -355,7 +364,7 @@
 \section{主観評価実験を踏まえた位置による身体像拡張の差異を評価する被験者実験}
         
   \subsection{実験の目的}
-    第4節より，筋電計測位置と触覚提示位置によって羽ばたいて飛ぶ感覚の感じ方に違いが生じることを確認した．本節では，筋電計測位置と触覚提示位置による感じ方の違い（身体像拡張の度合）について，被験者実験より検証を行う．
+    前節より，筋電計測位置と触覚提示位置によって羽ばたいて飛ぶ感覚の感じ方に違いが生じることを確認した．本節では，筋電計測位置と触覚提示位置による感じ方の違い（身体像拡張の度合）について，被験者実験より検証を行う．
     % 被験者は，東京農工大学学生15名である．
     % 本実験は「東京農工大学　人を対象とする研究に関する倫理審査委員会の倫理審査」を通過している．
     % 被験者は東京農工大学掲示板より募集し，一回につき1000円分のAmazonギフトカードを謝礼とした．
@@ -373,7 +382,7 @@
         % \fig{hmd-vive_pro_eye.jpg}{width=0.6\hsize}{HMD（HTC VIVE PRO EYE）}
         \fig{VirtualWingsV2.png}{width=0.9\hsize}{Virtual Wings}
 
-        被験者実験を行う実験環境について述べる．被験者実験では，第4節の主観評価実験と同様に\figref{experiment-Experiment_equipment_system.pdf}のような環境のシステムで実験を行う．
+        被験者実験を行う実験環境について述べる．被験者実験では，第4節の主観評価実験と同様に\figref{maezuri-Experiment_equipment_system.pdf}のような環境のシステムで実験を行う．
 
         筋電計測装置にはMyoWare（\figref{maezuri-Haptics_dev.pdf}）を使用する．
         取得した筋電位の値をUnityへ送り，視覚提示装置と触覚提示装置を制御する．
