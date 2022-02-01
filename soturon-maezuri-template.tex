@@ -84,7 +84,7 @@
     自己所有感 は，自分の身体部位が自分自身の身体の一部に属していると感じる感覚や経験である．
     自己主体感は，自分自身である行為を行っている，その身体部位制御しているのは自分であるという感覚や経験である．
 
-    身体像の形成において，自己所有感・自己主体感は密接に関係している．従って，仮想翼の身体像を得て飛ぶこと，つまり身体像拡張して動作することで，本研究における以下の要素を満たすことができると考える．
+    身体像の形成において，自己所有感・自己主体感は密接に関係している．従って，仮想翼の身体像を得て飛ぶこと，つまり身体像を拡張して動作することで，本研究における以下の要素を満たすことができると考える．
 
     \begin{itemize}
         \item ヒトが本来所有しない「翼」を感じさせる(自己所有感)
@@ -431,13 +431,13 @@
                 \equlabel{force_prop}
                 \bm{l}=\begin{pmatrix}400 \\ 500 \end{pmatrix}
         \end{eqnarray}
-        $l\;$は比例定数（1行目：進行方向，2行目：上昇方向）．$a\;$[\mathrm{N}]は計測可能な筋電位の最大値（$a=1024$），$x\;$[N]は計測された筋電位．
+        $l\;$は比例定数（1行目：進行方向，2行目：上昇方向）．$a\;$[N]は計測可能な筋電位の最大値（$a=1024$），$x\;$[N]は計測された筋電位．
 
-        また，仮想翼を内側に羽ばたかせている際に，触覚提示を行う．この時の触覚提示の強さ$P\;[N]$は計測された筋電位に応じて\equref{haptics}の変化するようにする．
+        また，仮想翼を内側に羽ばたかせている際に，触覚提示を行う．この時の触覚提示の強さ$P\;$[N]は計測された筋電位に応じて\equref{haptics}の変化するようにする．
         
         \begin{eqnarray}
                 \equlabel{haptics}
-                P=a \tanh\left(\,\frac{x}{a}\,\right) \;[N]
+                P=a \tanh\left(\,\frac{x}{a}\,\right) \;[\mathrm{N}]
         \end{eqnarray}
         
   \subsection{実験方法}
@@ -468,11 +468,11 @@
         % 視覚的な結果
         \figpos{subjectexp-result_haptics_pos.png}{width=0.9\hsize}{Comparison of haptics display positions}{t}
 
-        \figpos{subjectexp-result_emg_pos.png}{width=.86\hsize}{Comparison of EMG mesuring position}{t}
+        \figpos{subjectexp-result_emg_pos.png}{width=.86\hsize}{Comparison of EMG measuring position}{t}
 
         \figpos{subjectexp-result_vib_or_ems.png}{width=.86\hsize}{Comparison of Vibration and EMS}{t}
 
-        \figpos{subjectexp-result_mesure_or_presen.png}{width=.86\hsize}{Comparison of mesuring position and haptcs presentation position}{t}
+        \figpos{subjectexp-result_mesure_or_presen.png}{width=.86\hsize}{Comparison of measuring position and haptics presentation position}{t}
 
         % \triplefigthrough{subjectexp-result_haptics_pos.png}{width=.33\hsize}{subjectexp-result_emg_pos.png}{width=.33\hsize}{subjectexp-result_mesure_or_presen.png}{width=.33\hsize}{caption}      
         
