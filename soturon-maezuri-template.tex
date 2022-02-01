@@ -6,7 +6,7 @@
 \usepackage{balance}
 \usepackage{caption}
  
-\secret{b}{0mm}                 %学外秘/専攻外秘の設定．学部はb（学外秘），修士はm（専攻外秘）にする．
+\secret{m}{0mm}                 %学外秘/専攻外秘の設定．学部はb（学外秘），修士はm（専攻外秘）にする．
                                 %第2引数は位置の調整用．-側に大きくすれば左に寄る．+側に大きくすれば右に寄る．
 \pagenum{A-5}%ページ番号 プログラムが確定したら修正を！
  
@@ -23,16 +23,16 @@
 \author{水内研究室}{遠藤 健}{Ken ENDO}
 \begin{abstract}
   % ロボメックの使いまわし
-  Since ancient times, people have longed to fly in the sky. Actual flying involves risks and costs, but using a VR device makes it easy to experience flight. In this study, we propose a method of presenting the sensation of flying with flapping virtual wings independent of the limbs, such as the Draco. Unlike studies that presents the sensation of flapping wings by moving the arms, new applications that use the limbs during the flight experience can be expected by flying without moving the limbs. In this paper, we proposed a method of presenting the sensation of manipulating the wing without using the limbs and a method of transmitting the force acting on the wing to humans. We conducted experiments using these methods and obtained subjective evaluations.
+  Since ancient times, people have longed to fly in the sky. Actual flying involves risks and costs, but using a VR device makes it easy to experience flight. In this study, we propose a method of presenting the sensation of flying with flapping virtual wings independent of the limbs, such as a flying lizard. Unlike studies that presents the sensation of flapping wings by moving the arms, new applications that use the limbs during the flight experience can be expected by flying without moving the limbs. In this paper, we proposed a method of presenting the sensation of manipulating the wing without using the limbs and a method of transmitting the force acting on the wing to humans. We conducted experiments using these methods and obtained subjective evaluations.
+  % 
+  From the experiment, it was confirmed that the operation by static muscle contraction is also effective for operationing wings. It was also shown that the tactile presentation using EMS has a higher overall evaluation. Finally, we obtained the result that the body image expansion of the virtual wing which proposed in this study is possible.
 \end{abstract}
-\keyword{Virtual Reality, Body image expansion, Virtual wings independent of the limbs,Haptics}
+\keyword{Virtual Reality, Body image expansion, Virtual wings independent of the limbs, Haptics}
 ]
 \begin{small}
 
 \section{緒   言}
-  \fig{WingMan.png}{width=.9\hsize}{Flying with flapping virtual wings
-  %  independent of the limbs
-  }
+  % \fig{WingMan.png}{width=.9\hsize}{Flying with flapping virtual wings independent of the limbs}
 
   ヒトは古くから空を飛ぶことに憧れを抱いている．
   これまで私たちは，飛行機やハンググライダーといった乗り物を用いることで飛行体験をしてきた．
@@ -44,8 +44,8 @@
   % 乗り物・ウェアラブルな装置を問わず
   簡単に飛行体験が可能となる．
 
-  \figref{WingMan.png}は，四肢から独立した翼で羽ばたいて飛ぶ様子を示した図である．
-  本研究では，VRシステムを用いて\figref{WingMan.png}のように，ヒトの背中から翼が生えた生物になり羽ばたいて飛ぶ感覚の提示手法を提案する．
+  \figref{WingMan.pdf}は，四肢から独立した翼で羽ばたいて飛ぶ様子を示した図である．
+  本研究では，VRシステムを用いて\figref{WingMan.pdf}のように，ヒトの背中から翼が生えた生物になり羽ばたいて飛ぶ感覚の提示手法を提案する．
   
   % \subsection{本研究での羽ばたいて飛ぶ感覚の定義}
   %   本論文では「浮遊感」，「飛ぶ感覚」，「羽ばたいて飛ぶ感覚」を次のように位置づける．
@@ -84,14 +84,15 @@
     自己所有感 は，自分の身体部位が自分自身の身体の一部に属していると感じる感覚や経験である．
     自己主体感は，自分自身である行為を行っている，その身体部位制御しているのは自分であるという感覚や経験である．
 
-    このように，身体像が自己所有感・自己主体感と密接に関係していることが分かる．従って，仮想翼の身体像を得て飛ぶこと，つまり身体像拡張して動作することで，本研究における以下の要素を満たすことが出来ると考える．
+    身体像の形成において，自己所有感・自己主体感は密接に関係している．従って，仮想翼の身体像を得て飛ぶこと，つまり身体像拡張して動作することで，本研究における以下の要素を満たすことができると考える．
 
     \begin{itemize}
-        \item ヒトに本来存在しない「翼」を感じさせる(自己所有感)
+        \item ヒトが本来所有しない「翼」を感じさせる(自己所有感)
         \item その翼で「羽ばたいて飛ぶ感覚」を提示する(自己主体感)
     \end{itemize}
 
   \subsection{身体像拡張}
+  \fig{WingMan.pdf}{width=.9\hsize}{Flying with flapping virtual wings}
     % \fig{bodyimage-body_image_expansion.pdf}{width=.9\hsize}{Body image expantion}
 
     自己以外の部分に身体像がダイナミックに変化することがある．このことを身体像の拡張
@@ -170,7 +171,6 @@
       
       % 触覚提示として一般的な
       振動を用いた触覚提示は，偏心モータによる振動の提示を行う．
-  
       電気刺激を用いた触覚提示は，
       EMS（Electro Myo Stimulation: 神経筋電気刺激療法）と呼ばれる，筋肉や運動神経へ電気刺激を与えることで筋収縮を促し，疑似的に触覚を提示する方法を用いる．
       本研究では，EMS機器により筋収縮を起こすことで触覚を生じさせ，翼からの情報を提示する．
@@ -189,7 +189,7 @@
     % \fig{myo_armband.pdf}{width=0.8\hsize}{Myo（Thalmic Labs）}
     % \fig{MyoWare.pdf}{width=0.7\hsize}{MyoWare（Advancer Technologies LLC）}
 
-    まず，筋電計測装置として，ジェスチャと力みによる操作を比較するためにMyo（\figref{maezuri-EMG_dev.pdf}左）とMyoWare（\figref{maezuri-EMG_dev.pdf}右）の2つを用意する．
+    まず，筋電計測装置として，ジェスチャと力みによる操作を比較するためにMyo（Thalmic Labs社，\figref{maezuri-EMG_dev.pdf}左）とMyoWare（Advancer Technologies社，\figref{maezuri-EMG_dev.pdf}右）の2つを用意する．
     % MyoはThalmic Labsが開発した，筋電センサを搭載したマルチジェスチャバンドであり，上腕部の筋肉位から，腕・手首・指の動きのジェスチャを識別することが可能な筋電センサである．
     % MyoWareはAdvancer Technologiesが提供する湿式筋電センサであり，Myoと異なり任意の筋肉の筋電位を計測することが可能である
 
@@ -405,13 +405,13 @@
         本実験でのVR空間では，飛行を行いやすくするために重力加速度$g^{\prime}$を月と同等（\equref{gravity}）に設定する．
         \begin{eqnarray}
                 \equlabel{gravity}
-                g^{\prime}=1.62\;[m/s^{2}]
+                g^{\prime}=1.62\;[\mathrm{m/s^{2}}]
         \end{eqnarray}
 
-        また，飛行の際に\equref{air_resistance}のような，速度に比例した空気抵抗$\bm{R}\;[N]$を与える．
+        また，飛行の際に\equref{air_resistance}のような，速度に比例した空気抵抗$\bm{R}\;[\mathrm{N}]$を与える．
         \begin{eqnarray}
                 \equlabel{air_resistance}
-                \bm{R}=k\bm{v} \;[N]
+                \bm{R}=k\bm{v} \;[\mathrm{N}]
         \end{eqnarray}
         $k$は比例定数（$k=5.0$）．
         % 進行方向，上昇方向どちらも比例定数は等しい
@@ -421,17 +421,17 @@
         VR空間内での具体的な飛行方法について述べる．
         まず，翼の操作方法は，操作位置（筋電計測位置）を力ませている間は仮想翼が内側に羽ばたき，弛緩させると仮想翼を広げる用に設計する（\figref{Movement_of_VirtualWingsV2.pdf}）．
         % 仮想翼が操作位置を力ませ
-        仮想翼を羽ばたかせることにより，進行・上昇方向へ力$\bm{F}\;[N]$が発生し飛行することができる．この時発生する力$\bm{F}\;[N]$は\equref{force}に従う．
+        仮想翼を羽ばたかせることにより，進行・上昇方向へ力$\bm{F}\;[\mathrm{N}]$が発生し飛行することができる．この時発生する力$\bm{F}\;[\mathrm{N}]$は\equref{force}に従う．
         % この式についてのrefをしっかりする（空機抵抗の終端速度の式を参考にしたが，もっと理屈的に説明できるように）
         \begin{eqnarray}
                 \equlabel{force}
-                \bm{F}=\frac{a}{\bm{l}}  \tanh\left(\,\frac{x}{a}\,\right) \;[N]
+                \bm{F}=\frac{a}{\bm{l}}  \tanh\left(\,\frac{x}{a}\,\right) \;[\mathrm{N}]
         \end{eqnarray}
         \begin{eqnarray}
                 \equlabel{force_prop}
                 \bm{l}=\begin{pmatrix}400 \\ 500 \end{pmatrix}
         \end{eqnarray}
-        $l\;$は比例定数（1行目：進行方向，2行目：上昇方向）．$a\;$[N]は計測可能な筋電位の最大値（$a=1024$），$x\;$[N]は計測された筋電位．
+        $l\;$は比例定数（1行目：進行方向，2行目：上昇方向）．$a\;$[\mathrm{N}]は計測可能な筋電位の最大値（$a=1024$），$x\;$[N]は計測された筋電位．
 
         また，仮想翼を内側に羽ばたかせている際に，触覚提示を行う．この時の触覚提示の強さ$P\;[N]$は計測された筋電位に応じて\equref{haptics}の変化するようにする．
         
