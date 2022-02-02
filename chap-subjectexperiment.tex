@@ -56,13 +56,13 @@
         本実験でのVR空間では，飛行を行いやすくするために重力加速度$g^{\prime}$を月と同等（\equref{gravity}）に設定する．
         \begin{eqnarray}
                 \equlabel{gravity}
-                g^{\prime}=1.62\;[m/s^{2}]
+                g^{\prime}=1.62\;[\mathrm{m/s^{2}}]
         \end{eqnarray}
 
-        また，飛行の際に\equref{air_resistance}のような，速度に比例した空気抵抗$R\;[N]$を与える．
+        また，飛行の際に\equref{air_resistance}のような，速度に比例した空気抵抗$R\;$[N]を与える．
         \begin{eqnarray}
                 \equlabel{air_resistance}
-                \bm{R}=k\bm{v} \;[N]
+                \bm{R}=k\bm{v} \;[\mathrm{N}]
         \end{eqnarray}
         $k$は比例定数（$k=5.0$）．
         % 進行方向，上昇方向どちらも比例定数は等しい
@@ -72,11 +72,11 @@
         VR空間内での具体的な飛行方法について述べる．
         まず，翼の操作方法は，操作位置（筋電計測位置）を力ませている間は仮想翼が内側に羽ばたき，弛緩させると仮想翼を広げる用に設計する（\figref{Movement_of_VirtualWingsV2.pdf}）．
         % 仮想翼が操作位置を力ませ
-        仮想翼を羽ばたかせることにより，進行・上昇方向へ力が発生し飛行する（波状飛行\cite{bird-flying}）ことができる．この際発生する力$F\;[N]$は\equref{force}に従う．
+        仮想翼を羽ばたかせることにより，進行・上昇方向へ力が発生し飛行する（波状飛行\cite{bird-flying}）ことができる．この際発生する力$F\;$[N]は\equref{force}に従う．
         % この式についてのrefをしっかりする（空機抵抗の終端速度の式を参考にしたが，もっと理屈的に説明できるように）
         \begin{eqnarray}
                 \equlabel{force}
-                \bm{F}=\frac{a}{\bm{l}}  \tanh\left(\,\frac{x}{a}\,\right) \;[N]
+                \bm{F}=\frac{a}{\bm{l}}  \tanh\left(\,\frac{x}{a}\,\right) \;[\mathrm{N}]
         \end{eqnarray}
         \begin{eqnarray}
                 \equlabel{force_prop}
@@ -84,7 +84,7 @@
         \end{eqnarray}
         $l\;$は比例定数（1行目：進行方向，2行目：上昇方向）．$a\;$[N]は計測可能な筋電位の最大値（$a=1024$），$x\;$[N]は計測された筋電位．
 
-        また，仮想翼を内側に羽ばたかせている際に，触覚提示を行う．この時の触覚提示の強さ$P\;[N]$は計測された筋電位に応じて\equref{haptics}の変化するようにする．
+        また，仮想翼を内側に羽ばたかせている際に，触覚提示を行う．この時の触覚提示の強さ$P\;$[N]は計測された筋電位に応じて\equref{haptics}の変化するようにする．
         % ウェーバー・フェヒナーの法則\equref{weber_fechner}\cite{10011340169}より，人間の感覚の大きさは受ける刺激の強さの対数に比例することが知られている．
         % \begin{eqnarray}
         %         \equlabel{weber_fechner}
@@ -95,7 +95,7 @@
         
         \begin{eqnarray}
                 \equlabel{haptics}
-                P=a \tanh\left(\,\frac{x}{a}\,\right) \;[N]
+                P=a \tanh\left(\,\frac{x}{a}\,\right) \;[\mathrm{N}]
         \end{eqnarray}
         
 \section{実験方法}
@@ -148,11 +148,11 @@
         % 視覚的な結果
         \fig{subjectexp-result_haptics_pos.png}{width=0.8\hsize}{Comparison of haptics display positions}
 
-        \fig{subjectexp-result_emg_pos.png}{width=0.8\hsize}{Comparison of EMG mesuring position}
+        \fig{subjectexp-result_emg_pos.png}{width=0.8\hsize}{Comparison of EMG measuring position}
 
         \fig{subjectexp-result_vib_or_ems.png}{width=0.8\hsize}{Comparison of Vibration and EMS}
 
-        \fig{subjectexp-result_mesure_or_presen.png}{width=0.8\hsize}{Comparison of mesuring position and haptcs presentation position}
+        \fig{subjectexp-result_mesure_or_presen.png}{width=0.8\hsize}{Comparison of measuring position and haptics presentation position}
 
         % 数値的な結果
         % \begin{table}[tb]
